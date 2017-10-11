@@ -2,7 +2,9 @@
 
 // Initializes the dice in the list of pre-set dice. Call once at program start.
 void initialize_preset_dice(struct preset_dice* input_array_of_dice) {
-	for (int i = 0; i < 16; i++) {
+	int i;
+	
+	for (i = 0; i < 16; i++) {
 		input_array_of_dice[i].position = 0;
 	}
 
@@ -29,9 +31,9 @@ void initialize_preset_dice(struct preset_dice* input_array_of_dice) {
 // game_dice. Does not shuffle the dice. Helper function.
 void roll_but_not_shuffle_dice(struct rolled_dice* game_dice,
 		struct preset_dice* input_array_of_dice) {
-
+	int i;
 	srand(time(NULL));
-	for (int i = 0; i < 16; i++) {
+	for (i = 0; i < 16; i++) {
 		int r = rand()%6;
 		game_dice[i].character = input_array_of_dice[i].configurations[r];
 	}
@@ -39,11 +41,11 @@ void roll_but_not_shuffle_dice(struct rolled_dice* game_dice,
 
 // Shuffles an array of rolled dice. Helper function.
 void shuffle_rolled_dice_positions(struct rolled_dice* game_dice) {
-
+	int i, r;
 	struct rolled_dice new_game_dice[16];
 
-	int r = 0;
-	for (int i = 0; i < 16; i++) {
+	r = 0;
+	for (i = 0; i < 16; i++) {
 
 		srand(time(NULL));
 		// this is somewhat inefficient. Using it for now.
@@ -54,7 +56,7 @@ void shuffle_rolled_dice_positions(struct rolled_dice* game_dice) {
 		game_dice[r].position = -1;
 	}
 
-	for (int i = 0; i < 16; i++) {
+	for (i = 0; i < 16; i++) {
 		game_dice[i] = new_game_dice[i];
 		game_dice[i].position = i+1;
 	}
@@ -65,7 +67,7 @@ void shuffle_rolled_dice_positions(struct rolled_dice* game_dice) {
 // the dice into the 2D array game_dice. Call once at the start of every game.
 void roll_dice(struct rolled_dice** game_board,
 		struct preset_dice* input_array_of_dice){
-
+	int i, j;
 	game_board[0] = malloc(sizeof(struct rolled_dice) * 4);
 	game_board[1] = malloc(sizeof(struct rolled_dice) * 4);
 	game_board[2] = malloc(sizeof(struct rolled_dice) * 4);
@@ -77,8 +79,8 @@ void roll_dice(struct rolled_dice** game_board,
 	roll_but_not_shuffle_dice(adjusted_dice_array, input_array_of_dice);
 	shuffle_rolled_dice_positions(adjusted_dice_array);
 
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
+	for (i = 0; i < 4; i++) {
+		for (j = 0; j < 4; j++) {
 			game_board[i][j] = adjusted_dice_array[i*4 + j];
 		}
 	}
@@ -86,23 +88,25 @@ void roll_dice(struct rolled_dice** game_board,
 // Prints a visualization of the input array of rolled_dice.
 void print_game_board(struct rolled_dice** game_board) {
 
-	for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++) {
-				if (j != 3) {
-					printf("%c \t", game_board[i][j].character);
-				}
-				else {
-					printf("%c \n", game_board[i][j].character);
+	int i, j;
+	for (i = 0; i < 4; i++) {
+		for (j = 0; j < 4; j++) {
+			if (j != 3) {
+				printf("%c \t", game_board[i][j].character);
+			}
+			else {
+				printf("%c \n", game_board[i][j].character);
 
-				}
 			}
 		}
+	}
 }
 
 void print_hc_board(char boggle[][4]) {
 
-	for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++) {
+	int i, j;
+	for (i = 0; i < 4; i++) {
+			for (j = 0; j < 4; j++) {
 				if (j != 3) {
 					printf("%c \t", boggle[i][j]);
 				}
@@ -118,7 +122,10 @@ void print_hc_board(char boggle[][4]) {
 void convert_to_board(char *letters, char ***board){
 	// allocate space for boggle board on heap in order to access it in main. 
 	char *word;
-	int i, j, t = 0;
+	int i, j, t;
+	i = 0;
+	j = 0;
+	t = 0;
 
 	*board = malloc(sizeof(char * ) * 4);
 	char **board_deref = *board;

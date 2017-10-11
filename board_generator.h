@@ -1,5 +1,5 @@
-#ifndef BOARD_GEN
-#define BOARD_GEN
+#ifndef BOARD_GEN_H
+#define BOARD_GEN_H
 
 #include <stdio.h>
 #include <string.h>
@@ -32,4 +32,4 @@ void roll_dice(struct rolled_dice** game_board,
 void convert_to_board(char *letters, char ***board);
 void print_hc_board(char boggle[][4]);
 
-#endif
+#endif /*BOARD_GEN_H*/
