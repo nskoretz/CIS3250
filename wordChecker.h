@@ -26,7 +26,7 @@ version
 *@param gameBoard pointer to a gameBoard array storing the character and position of each index in the board (2D array)
 *@param word string containing the word being sought after on the board
 **/
-int wordChecker(struct rolledDice **gameBoard, char *word);
+int wordChecker(struct RolledDice **gameBoard, char *word);
 
 
 /**Function to recursively check every adjacent piece on a board and see if it is the next character needed by the word being sought after.
@@ -40,7 +40,7 @@ int wordChecker(struct rolledDice **gameBoard, char *word);
 *@param subLen integer representing the last index from a string whose character has been found on the game board
 *@param visited pointer to an array of characters that have already been found
 **/
-int abidesRules(int i, int j, char *word, struct rolledDice** gameBoard, int subLen, int **visited);
+int abidesRules(int i, int j, char *word, struct RolledDice** gameBoard, int subLen, int **visited);
 
 
 /**Function to grab a character off the gameboard
@@ -51,7 +51,7 @@ int abidesRules(int i, int j, char *word, struct rolledDice** gameBoard, int sub
 *@param j integer representing the coloumn in the game board
 *@param gameBoard pointer to a gameBoard array storing the character and position of each index in the board (2D array)
 **/
-char getLetter(int i, int j, struct rolledDice **gameBoard);
+char getLetter(int i, int j, struct RolledDice **gameBoard);
 
 
 /**Function to check if a word exists in an 2d array of characters. Creates an array of visited nodes on the board, then checks if a word exists

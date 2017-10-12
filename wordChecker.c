@@ -99,7 +99,7 @@ int abidesRules(int i, int j, char *word, struct RolledDice **gameBoard, int sub
 *@param gameBoard pointer to a gameBoard array storing the character and position of each index in the board (2D array)
 *@param word string containing the word being sought after on the board
 **/
-int wordChecker(struct rolled_dice **gameBoard, char *word){
+int wordChecker(struct RolledDice **gameBoard, char *word){
 
     /* Initialize local variables */
 	int row, letter, col, m, n;
