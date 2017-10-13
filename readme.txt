@@ -8,7 +8,7 @@ This is just so the repo isn't empty
 7. git status
 8. git diff master
 9. use git checkout -b newbranch      to make a new branch and switch to it automatically
-10. use git chechout master           to just switch branches
+10. use git checkout master           to just switch branches
 11. use git branch -d oldbranch       to delete
 12. use git push origin branchname    to make the branch up to git and not just local
 13. use git pull                      to get the latest commit
