@@ -9,8 +9,8 @@
 *
 **/
 void convertToBoard(char *letters, char ***board){
-	/*allocate space for boggle board on heap in order to access it in main.*/
 
+	/*allocate space for boggle board on heap in order to access it in main.*/
 	char *word;
 	int i, j, t;
 
@@ -63,18 +63,17 @@ void printGameBoard(struct RolledDice **gameBoard) {
 			}
 			else {
 				printf("%c \n", gameBoard[i][j].character);
-
 			}
 		}
 	}
 }
 
-/**
+/** Prints a visualization of the hurrent board.
 *
 *All the variable names are now replaced with camelCase equivalents.
 *Additionally all variables are initialized and
-*defined at the top. And all the comments are now are also made compatible to
-*older c versions.
+*defined at the top. All the comments are now are also made compatible to
+*older c versions. There was an indent fix as well.
 *
 **/
 void printHcBoard(char boggle[][4]) {
@@ -85,15 +84,15 @@ void printHcBoard(char boggle[][4]) {
 	j = 0;
 
 	for (i = 0; i < 4; i++) {
-			for (j = 0; j < 4; j++) {
-				if (j != 3) {
-					printf("%c \t", boggle[i][j]);
-				}
-				else {
-					printf("%c \n", boggle[i][j]);
-				}
+		for (j = 0; j < 4; j++) {
+			if (j != 3) {
+				printf("%c \t", boggle[i][j]);
+			}
+			else {
+				printf("%c \n", boggle[i][j]);
 			}
 		}
+	}
 }
 
 /**Initializes the dice in the list of pre-set dice. Call once at program start.
