@@ -9,8 +9,8 @@
 #include <string.h>
 #include <ctype.h>
 #include "dictionary.h"
-#include "board_generator.h"
-#include "word_checker.h"
+#include "boardGenerator.h"
+#include "wordChecker.h"
 #include "scoreboard.h"
 
 #define MAX_LINE 100
