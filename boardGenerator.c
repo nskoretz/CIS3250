@@ -5,7 +5,7 @@
 *All the variable names are now replaced with camelCase equivalents.
 *Additionally all variables are initialized and
 *defined at the top. And all the comments are now are also made compatible to
-*older c versions.
+*older c versions. The functions are also sorted by alphabetical order.
 *
 **/
 void convertToBoard(char *letters, char ***board){
