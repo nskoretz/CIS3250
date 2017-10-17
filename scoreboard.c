@@ -9,7 +9,7 @@
  * head which has the name name_to_find. If such a User is not in the Linked
  * List, it will return NULL. Helper function to increment_score.
  */
-User *find_user_with_name(User *head, char *name_to_find) {
+User *findUserWithName(User *head, char *name_to_find) {
 	if (head == NULL) {
 		return head;
 	}
@@ -24,7 +24,7 @@ User *find_user_with_name(User *head, char *name_to_find) {
 }
 
 /* frees every element of the linked list */
-void free_all(User *head) {
+void freeAll(User *head) {
 	if (head -> next == NULL) {
 		free(head);
 	}
@@ -39,7 +39,7 @@ void free_all(User *head) {
 	}
 }
 
-User *get_user_at_index(User *head, int index) {
+User *getUserAtIndex(User *head, int index) {
 	if (head == NULL) {
 		return NULL;
 	}
@@ -56,7 +56,7 @@ User *get_user_at_index(User *head, int index) {
 	return NULL;
 }
 
-int get_index_of_user_with_name(User *head, char *name_to_find) {
+int getIndexOfUserWithName(User *head, char *name_to_find) {
 	if (head == NULL && head->name != name_to_find) {
 		return -1;
 	}
@@ -76,7 +76,7 @@ int get_index_of_user_with_name(User *head, char *name_to_find) {
  * Finds whether or not a an existing user is already in the list. Of they are,
  * returns 1. If not, returns 0.
  */
-int user_is_in_list(User *head, char *name_to_find) {
+int userIsInList(User *head, char *name_to_find) {
 	User *current = head;
 	while (current != NULL) {
 		if (strcmp(current->name, name_to_find) == 0) {
@@ -87,7 +87,7 @@ int user_is_in_list(User *head, char *name_to_find) {
 	return 0;
 }
 
-int get_length(User *head) {
+int getLength(User *head) {
 	if (head == NULL) {
 		return 0;
 	}
@@ -104,9 +104,9 @@ int get_length(User *head) {
 /*
  * Helper function. Finds the last node in the linked list and returns it.
  * Returns NULL if called with an empty head, although such a case is not used
- * in the main function add_node.
+ * in the main function addNode.
  */
-User *get_last_node(User *head) {
+User *getLastNode(User *head) {
 	if (head == NULL) {
 		return head;
 	}
@@ -120,7 +120,7 @@ User *get_last_node(User *head) {
 	return NULL;
 }
 
-void print_scoreboard(User *head) {
+void printScoreboard(User *head) {
         printf("\n---- SCORE BOARD ---- \n");
 	if (head -> next != NULL) {
 		User *current = head -> next;
@@ -136,7 +136,7 @@ void print_scoreboard(User *head) {
 	}
 }
 
-void add_node(User *head, char *name, int max_score) {
+void addNode(User *head, char *name, int max_score) {
 	User *user_ptr;
 	if (head != NULL) {
 		 user_ptr = malloc(sizeof(struct user));
@@ -151,13 +151,13 @@ void add_node(User *head, char *name, int max_score) {
 		head = user_ptr;
 	}
 	else {
-		get_last_node(head)->next = user_ptr;
+		getLastNode(head)->next = user_ptr;
 	}
 }
 
-void update_node_with_name(User *head, char *name, int current_score) {
-	if (user_is_in_list(head, name)) {
-		User *user_ptr = find_user_with_name(head, name);
+void updateNodeWithName(User *head, char *name, int current_score) {
+	if (userIsInList(head, name)) {
+		User *user_ptr = findUserWithName(head, name);
 		if (current_score > (user_ptr->max_score)) {
 			user_ptr->max_score = current_score;
 		}
