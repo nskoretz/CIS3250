@@ -66,9 +66,10 @@ void shuffle_rolled_dice_positions(struct rolled_dice* game_dice) {
 void roll_dice(struct rolled_dice** game_board,
 		struct preset_dice* input_array_of_dice){
 
-	for (int i = 0; i<4; i++) {
-		game_board[i] = malloc(sizeof(struct rolled_dice) * 4);
-	}
+	game_board[0] = malloc(sizeof(struct rolled_dice) * 4);
+	game_board[1] = malloc(sizeof(struct rolled_dice) * 4);
+	game_board[2] = malloc(sizeof(struct rolled_dice) * 4);
+	game_board[3] = malloc(sizeof(struct rolled_dice) * 4);
 
 	// temporary array of structs to contain adjusted 1D array of dice.
 	struct rolled_dice adjusted_dice_array[16];
@@ -92,6 +93,7 @@ void print_game_board(struct rolled_dice** game_board) {
 				}
 				else {
 					printf("%c \n", game_board[i][j].character);
+
 				}
 			}
 		}
@@ -121,15 +123,17 @@ void convert_to_board(char *letters, char ***board){
 	*board = malloc(sizeof(char * ) * 4);
 	char **board_deref = *board;
 
-	for (int i = 0; i < 4; i++) {
-		board_deref[i] = malloc(sizeof(char) * 4);
-	}
+	board_deref[0] = malloc(sizeof(char) * 4);
+	board_deref[1] = malloc(sizeof(char) * 4);
+	board_deref[2] = malloc(sizeof(char) * 4);
+	board_deref[3] = malloc(sizeof(char) * 4);
 
 	for (i = 0; i < 4; i++) {
 		for (j = 0; j < 4; j++) {
 			if (j != 3) {
 				board_deref[i][j] = letters[t];
 				t++;
+
 			}
 			else {
 				board_deref[i][j] = letters[t];
