@@ -35,8 +35,7 @@ void convertToBoard(char *letters, char ***board){
                 boardDeref[i][j] = letters[t];
                 t++;
 
-            }
-            else {
+            } else {
                 boardDeref[i][j] = letters[t];
                 t++;
             }
@@ -63,8 +62,7 @@ void printGameBoard(struct RolledDice **gameBoard) {
         for (j = 0; j < 4; j++) {
             if (j != 3) {
                 printf("%c \t", gameBoard[i][j].character);
-            }
-            else {
+            } else {
                 printf("%c \n", gameBoard[i][j].character);
             }
         }
@@ -90,8 +88,7 @@ void printHcBoard(char boggle[][4]) {
         for (j = 0; j < 4; j++) {
             if (j != 3) {
                 printf("%c \t", boggle[i][j]);
-            }
-            else {
+            } else {
                 printf("%c \n", boggle[i][j]);
             }
         }
@@ -259,8 +256,7 @@ void convertToBoard(char *letters, char ***board){
                 boardDeref[i][j] = letters[t];
                 t++;
 
-            }
-            else {
+            } else {
                 boardDeref[i][j] = letters[t];
                 t++;
             }
@@ -287,8 +283,7 @@ void printGameBoard(struct RolledDice **gameBoard) {
         for (j = 0; j < 4; j++) {
             if (j != 3) {
                 printf("%c \t", gameBoard[i][j].character);
-            }
-            else {
+            } else {
                 printf("%c \n", gameBoard[i][j].character);
             }
         }
@@ -314,8 +309,7 @@ void printHcBoard(char boggle[][4]) {
         for (j = 0; j < 4; j++) {
             if (j != 3) {
                 printf("%c \t", boggle[i][j]);
-            }
-            else {
+            } else {
                 printf("%c \n", boggle[i][j]);
             }
         }
@@ -448,4 +442,3 @@ void shuffleRolledDicePositions(struct RolledDice *gameDice) {
         gameDice[i].position = i + 1;
     }
 }
->>>>>>> master:A2/boardGenerator.c
