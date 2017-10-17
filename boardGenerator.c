@@ -5,7 +5,11 @@
 *All the variable names are now replaced with camelCase equivalents.
 *Additionally all variables are initialized and
 *defined at the top. And all the comments are now are also made compatible to
+<<<<<<< HEAD
 *older c versions. The functions are also sorted by alphabetical order.
+=======
+*older c versions. - Reformatting of the boardGenerator.c is done by Andrew Cheung
+>>>>>>> 931190cc7c28967839689fe26371c31d11054e71
 *
 **/
 void convertToBoard(char *letters, char ***board){
