@@ -72,16 +72,17 @@ int abidesRules(int i, int j, char *word, struct RolledDice **gameBoard, int sub
     /* Check every character on the board surrounding the character that has already been found, to see if its the next character in the word to be found */
     int result = 0;
     for(adjCell = 0; adjCell < 8; adjCell++) {
-        int newX = i + allX[adjCell];
-		int newY = j + allY[adjCell];
+		
+        newX = i + allX[adjCell];
+		newY = j + allY[adjCell];
+		
 		if((newX >= 0) && (newX < 4) && (newY >=0) && (newY < 4) && toupper(findLetter) == getLetter(newX, newY, gameBoard) && !visited[newX][newY]){
             visited[newX][newY] = 1;
             ++subLen;
             result = abidesRules(newX, newY, word, gameBoard, subLen, visited); /* Recursively call function to find the next character in the word on the board */
             if(result){
                 return 1;
-            }
-            else{
+            } else{
                 --subLen; /* Go down a character and try to find it on a next adjacent piece on the board */
             }
         }
@@ -117,8 +118,7 @@ int wordChecker(struct RolledDice **gameBoard, char *word){
 		for (n = 0; n < 4; n++){
 			if (m == 0 && n == 0){
 				visited[m][n] = 1;
-			}
-			else { /*MOVED ELSE TO NEWLINE*/
+			} else {
                 visited[m][n] = 0;
 			}
 		}
@@ -201,24 +201,24 @@ int testAbidesRules(int i, int j, char *word, char **gameBoard, int subLen, int 
         subLen++;
         subLen++;
         currentLetter = word[subLen];
-    }
-    else { /* Normal case, set the findLetter to the character after the one already found */
+    } else { /* Normal case, set the findLetter to the character after the one already found */
         findLetter = word[subLen + 1];
     }
 
     /* Check every character on the board surrounding the character that has already been found, to see if its the next character in the word to be found */
     int result = 0;
-    for (adjCell = 0; adjCell < 8; adjCell++){
+    for (adjCell = 0; adjCell < 8; adjCell++) {
+		
         newX = i + allX[adjCell];
         newY = j + allX[adjCell];
+		
         if ((newX >= 0) && (newX < 4) && (newY >=0) && (newY < 4) && toupper(findLetter) == testGetLetter(newX, newY, gameBoard) && !visited[newX][newY]){
             visited[newX][newY] = 1;
             ++sub_len;
             result = testAbidesRules(newX, newY, word, gameBoard, subLen, visited);
             if (result){ /* word has been found  */
                 return 1;
-            }
-            else { /* word not found go back a letter and try again in a different adjacent cell */
+            } else { /* word not found go back a letter and try again in a different adjacent cell */
                 --subLen;
             }
         }
@@ -253,8 +253,7 @@ int testWordChecker (char **boggle, char *word) {
 		for (n = 0; n < 4; n++){
 			if (m == 0 && n == 0){
 				visited[m][n] = 1;
-			}
-			else {
+			} else {
                 visited[m][n] = 0;
 			}
 		}
@@ -308,8 +307,7 @@ int hcWordChecker(char boggle[][4], char *word) {
 		for (n = 0; n < 4; n++) {
 			if (m == 0 && n == 0) {
 				visited[m][n] = 1;
-			}
-			else{
+			} else{
                 visited[m][n] = 0;
 			}
 		}
@@ -377,13 +375,13 @@ int hcAbidesRules(int i, int j, char *word, char boggle[][4], int subLen, int **
         subLen++;
         subLen++;
         currentLetter = word[subLen];
-    }
-    else { /* Normal case, set the findLetter to the character after the one already found */
+    } else { /* Normal case, set the findLetter to the character after the one already found */
         findLetter = word[subLen + 1];
     }
 
     int result = 0;
     for (adjCell = 0; adjCell < 8; adjCell++) {
+		
         newX = i + allX[adjCell];
         newY = j + allY[adjCell];
 
@@ -394,8 +392,7 @@ int hcAbidesRules(int i, int j, char *word, char boggle[][4], int subLen, int **
 
             if (result) { /* Word has been found */
                 return 1;
-            }
-            else { /* word not found go back a letter and try again in a different adjacent cell */
+            } else { /* word not found go back a letter and try again in a different adjacent cell */
                 --subLen;
             }
         }
