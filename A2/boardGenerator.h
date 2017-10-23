@@ -17,9 +17,11 @@
 #include <stdlib.h>
 
 /**
- * @
- *
- * Detailed explanation.
+ * Changes Made by Michael
+ * Added in Doxygen style comments
+ * Changed all variable names to camel case and all struct data types to pascal case
+ * Changed pointers so that when declared the star is next to the variable
+ * Changed all of the tabs to spaces
  */
 
 /** 
