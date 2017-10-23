@@ -1,7 +1,7 @@
 /**
  * @file boggle.c
  *
- * @date October 15th 2017
+ * @date October 23rd 2017
  *
  * @brief This program models the Boggle board game
  */
@@ -14,11 +14,6 @@
 #include "scoreboard.h"
 
 #define MAX_LINE 100
-
-/**
- - set up board,
- - set up dictionary,
- **/
 
 /**
  * Converts every character in the character array to upper case
@@ -98,17 +93,17 @@ int main( int argc, char **argv ) {
     int currentScore, turnCount;
     char inputWord[100];
     char originalInputWord[100];
-    char line [MAX_LINE];
+    char line[MAX_LINE];
     char readLine[MAX_LINE];
     char *fileName;
-    const char * dictionaryName = "EnglishWords.txt";
+    const char *dictionaryName = "EnglishWords.txt";
     FILE *inputFilePtr;
     FILE *outputFilePtr;
-    DNode* checkEnglish;
-    DNode* checkSubmitted;
-    static DNode* englishDictionary[BIG_HASH_SIZE];
-    static DNode* guessedWords[SMALL_HASH_SIZE];
-    User* head = NULL;
+    DNode *checkEnglish;
+    DNode *checkSubmitted;
+    static DNode *englishDictionary[BIG_HASH_SIZE];
+    static DNode *guessedWords[SMALL_HASH_SIZE];
+    User *head = NULL;
     PresetDice globalDice[16];
     RolledDice *gameBoard[4];
 
@@ -210,7 +205,7 @@ int main( int argc, char **argv ) {
         char **testBoards;
         int fileLineCounter;
         int i, j, begin;
-        DNode* testResult;
+        DNode *testResult;
 
         begin = 0;
         fileLineCounter = 1;
