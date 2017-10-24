@@ -1,6 +1,5 @@
 /**
  * @file boardGenerator.h
- * @author Michael Vamvakas
  * @date 9 Sep 2012 update 12 Oct 2017
  * @brief File takes care of how the Boggle board is shown.
  *
