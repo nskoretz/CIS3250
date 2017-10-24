@@ -28,7 +28,7 @@ User *findUserWithName(User *head, char *nameToFind) {
 		if (strcmp(current->name, nameToFind) == 0) {
 			return current;
 		}
-		current = (current)->next;
+		current = current->next;
 	}
 	return NULL;
 }
@@ -39,7 +39,7 @@ User *findUserWithName(User *head, char *nameToFind) {
 * @return None
 */
 void freeAll(User *head) {
-	if (head -> next == NULL) {
+	if (head->next == NULL) {
 		free(head);
 	} else {
 		User *current = head->next;
@@ -47,7 +47,7 @@ void freeAll(User *head) {
 		while (current != NULL) {
 			free(previous);
 			previous = current;
-			current = (current)->next;
+			current = current->next;
 		}
 	}
 }
@@ -68,7 +68,7 @@ User *getUserAtIndex(User *head, int index) {
 		if (count == index + 1) {
 			return current;
 		}
-		current = (current)->next;
+		current = current->next;
 		count++;
 	}
 	return NULL;
@@ -89,7 +89,7 @@ int getIndexOfUserWithName(User *head, char *nameToFind) {
 		if (strcmp(current->name, nameToFind)) {
 			return count;
 		}
-		current = (current)->next;
+		current = current->next;
 		count++;
 	}
 	return -1;
@@ -107,7 +107,7 @@ int userIsInList(User *head, char *nameToFind) {
 		if (strcmp(current->name, nameToFind) == 0) {
 			return 1;
 		}
-		current = (current)->next;
+		current = current->next;
 	}
 	return 0;
 }
@@ -126,7 +126,7 @@ int getLength(User *head) {
 	int count = 0;
 	while (current != NULL) {
 		count++;
-		current = (current)->next;
+		current = current->next;
 	}
 	return count;
 }
@@ -147,7 +147,7 @@ User *getLastNode(User *head) {
 		if (current->next == NULL) {
 			return current;
 		}
-		current = (current)->next;
+		current = current->next;
 	}
 	return NULL;
 }
@@ -159,8 +159,8 @@ User *getLastNode(User *head) {
 **/
 void printScoreboard(User *head) {
         printf("\n---- SCORE BOARD ---- \n");
-	if (head -> next != NULL) {
-		User *current = head -> next;
+	if (head->next != NULL) {
+		User *current = head->next;
 		while (current != NULL) {
 			printf("\nPlayer name: %s \n", current->name);
 			printf("High score: %d \n", current->maxScore);
@@ -168,7 +168,7 @@ void printScoreboard(User *head) {
 			printf("Total score: %d \n", current->totalScore);
 			printf("\n--------------------- \n");
 
-			current = (current)->next;
+			current = current->next;
 		}
 	}
 }
@@ -181,10 +181,10 @@ void printScoreboard(User *head) {
 void addNode(User *head, char *name, int maxScore) {
 	User *userPtr;
 	if (head != NULL) {
-		 userPtr = malloc(sizeof(struct user));
+		 userPtr = malloc(sizeof(user));
 	}
 	strcpy(userPtr->name, name);
-	userPtr->  = maxScore;
+	userPtr->maxScore = maxScore;
 	userPtr->totalGames = 1;
 	userPtr->totalScore = maxScore;
 	userPtr->next = NULL;
