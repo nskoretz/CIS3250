@@ -5,6 +5,10 @@
  *
  * @brief This program models the Boggle board game
  */
+
+/**
+ * Changes made October 24th by Jackson Firth 0880887
+ */
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -89,12 +93,11 @@ void incrementTotalScore( int *userScore, char *word ) {
 }
 
 int main( int argc, char **argv ) {
-    int i, points, testPoints, invalidSize;
+    int i, testPoints, invalidSize;
     int currentScore, turnCount;
     char inputWord[100];
     char originalInputWord[100];
     char line[MAX_LINE];
-    char readLine[MAX_LINE];
     char *fileName;
     const char *dictionaryName = "EnglishWords.txt";
     FILE *inputFilePtr;
@@ -108,7 +111,7 @@ int main( int argc, char **argv ) {
     RolledDice *gameBoard[4];
 
     currentScore = turnCount = 0;
-    points = testPoints = invalidSize = 0;
+    testPoints = invalidSize = 0;
     head = (User*)malloc( sizeof( User ) );
 
     if (!(inputFilePtr = fopen( dictionaryName , "r" ))) {
@@ -133,7 +136,6 @@ int main( int argc, char **argv ) {
             char inputName[100];
             strcpy( originalInputWord, inputWord );
             convertToUpper2( &inputWord );
-            User *thisUser;
 
             /* "q" is the input, print scoreboard and exit game */
             if (strcmp( originalInputWord, "q" ) == 0) {
@@ -164,10 +166,10 @@ int main( int argc, char **argv ) {
                 continue;
             }
             printGameBoard( gameBoard );
-            checkEnglish = lookup( englishDictionary, BIG_HASH_SIZE, inputWord );
+            checkEnglish = lookUp( englishDictionary, BIG_HASH_SIZE, inputWord );
 
             if (checkEnglish != NULL) {
-                checkSubmitted = lookup( guessedWords, SMALL_HASH_SIZE, inputWord );
+                checkSubmitted = lookUp( guessedWords, SMALL_HASH_SIZE, inputWord );
 
                 if (checkSubmitted == NULL) {
                     if (strlen( inputWord ) > 2) {
@@ -201,11 +203,9 @@ int main( int argc, char **argv ) {
         fprintf( stdout, "playing in test mode with file: %s\n", fileName );
         FILE *testFilePtr;
         char testLine[MAX_LINE];
-        char *testWords;
         char **testBoards;
         int fileLineCounter;
         int i, j, begin;
-        DNode *testResult;
 
         begin = 0;
         fileLineCounter = 1;
@@ -237,10 +237,10 @@ int main( int argc, char **argv ) {
                 }
             } else if (fileLineCounter >= 2) {
                 for (char *p = strtok( testLine, "," ); p != NULL; p = strtok( NULL, "," )) {
-                    checkEnglish = lookup( englishDictionary, BIG_HASH_SIZE, convertToUpper( &p ) );
+                    checkEnglish = lookUp( englishDictionary, BIG_HASH_SIZE, convertToUpper( &p ) );
 
                     if (checkEnglish != NULL) {
-                        checkSubmitted = lookup( guessedWords, SMALL_HASH_SIZE, p );
+                        checkSubmitted = lookUp( guessedWords, SMALL_HASH_SIZE, p );
 
                         if (checkSubmitted == NULL) {
                             if (testWordChecker( testBoards, p )) {
