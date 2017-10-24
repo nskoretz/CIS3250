@@ -4,18 +4,27 @@
 #include <string.h>
 #include "scoreboard.h"
 
-/*
+/**
+* @file scoreboard.c
+* @date October 23rd, 2017
+* @author Pedro
+* @brief This file contains functions to operate the scoreboard
+*
+**/
+
+/**
  * Finds and returns a pointer to the User in the linked list beginning with
- * head which has the name name_to_find. If such a User is not in the Linked
- * List, it will return NULL. Helper function to increment_score.
- */
-User *findUserWithName(User *head, char *name_to_find) {
+ * head which has the name nameToFind. If such a User is not in the Linked
+ * List, it will return NULL. Helper function to incrementScore.
+ *@param head of user list, address of character array to search for
+ **/
+User *findUserWithName(User *head, char *nameToFind) {
 	if (head == NULL) {
 		return head;
 	}
 	User *current = head ;
 	while (current != NULL) {
-		if (strcmp(current->name, name_to_find) == 0) {
+		if (strcmp(current->name, nameToFind) == 0) {
 			return current;
 		}
 		current = (current)->next;
@@ -23,12 +32,14 @@ User *findUserWithName(User *head, char *name_to_find) {
 	return NULL;
 }
 
-/* frees every element of the linked list */
+/**
+* frees every element of the linked list
+* @param head of user list
+*/
 void freeAll(User *head) {
 	if (head -> next == NULL) {
 		free(head);
-	}
-	else {
+	} else {
 		User *current = head->next;
 		User *previous = head;
 		while (current != NULL) {
@@ -56,14 +67,18 @@ User *getUserAtIndex(User *head, int index) {
 	return NULL;
 }
 
-int getIndexOfUserWithName(User *head, char *name_to_find) {
-	if (head == NULL && head->name != name_to_find) {
+/**
+* Finds User with specified name and returns their index
+* @param Head of user list, pointer to character array to search for
+**/
+int getIndexOfUserWithName(User *head, char *nameToFind) {
+	if (head == NULL && head->name != nameToFind) {
 		return -1;
 	}
 	User *current = head;
 	int count = 0;
 	while (current != NULL) {
-		if (strcmp(current->name, name_to_find)) {
+		if (strcmp(current->name, nameToFind)) {
 			return count;
 		}
 		current = (current)->next;
@@ -72,14 +87,15 @@ int getIndexOfUserWithName(User *head, char *name_to_find) {
 	return -1;
 }
 
-/*
+/**
  * Finds whether or not a an existing user is already in the list. Of they are,
  * returns 1. If not, returns 0.
- */
-int userIsInList(User *head, char *name_to_find) {
+ * @param Head of user list, pointer to character array to search
+ **/
+int userIsInList(User *head, char *nameToFind) {
 	User *current = head;
 	while (current != NULL) {
-		if (strcmp(current->name, name_to_find) == 0) {
+		if (strcmp(current->name, nameToFind) == 0) {
 			return 1;
 		}
 		current = (current)->next;
@@ -87,6 +103,10 @@ int userIsInList(User *head, char *name_to_find) {
 	return 0;
 }
 
+/**
+* Returns length of the list
+* @param Head of list
+*/
 int getLength(User *head) {
 	if (head == NULL) {
 		return 0;
@@ -101,11 +121,12 @@ int getLength(User *head) {
 	return count;
 }
 
-/*
+/**
  * Helper function. Finds the last node in the linked list and returns it.
  * Returns NULL if called with an empty head, although such a case is not used
  * in the main function addNode.
- */
+ * @param Head of user list
+ **/
 User *getLastNode(User *head) {
 	if (head == NULL) {
 		return head;
@@ -120,15 +141,19 @@ User *getLastNode(User *head) {
 	return NULL;
 }
 
+/**
+* Prints the scoreboard
+* @param Head of user list
+**/
 void printScoreboard(User *head) {
         printf("\n---- SCORE BOARD ---- \n");
 	if (head -> next != NULL) {
 		User *current = head -> next;
 		while (current != NULL) {
 			printf("\nPlayer name: %s \n", current->name);
-			printf("High score: %d \n", current->max_score);
-			printf("Games played: %d \n", current->total_games);
-			printf("Total score: %d \n", current->total_score);
+			printf("High score: %d \n", current->maxScore);
+			printf("Games played: %d \n", current->totalGames);
+			printf("Total score: %d \n", current->totalScore);
 			printf("\n--------------------- \n");
 
 			current = (current)->next;
@@ -136,32 +161,40 @@ void printScoreboard(User *head) {
 	}
 }
 
-void addNode(User *head, char *name, int max_score) {
-	User *user_ptr;
+/**
+* Adds a new user to the user list
+* @param Head of user list, pointer to char array for name, maxScore
+**/
+void addNode(User *head, char *name, int maxScore) {
+	User *userPtr;
 	if (head != NULL) {
-		 user_ptr = malloc(sizeof(struct user));
+		 userPtr = malloc(sizeof(struct user));
 	}
-	strcpy(user_ptr->name, name);
-	user_ptr->max_score = max_score;
-	user_ptr->total_games = 1;
-	user_ptr->total_score = max_score;
-	user_ptr->next = NULL;
+	strcpy(userPtr->name, name);
+	userPtr->  = maxScore;
+	userPtr->totalGames = 1;
+	userPtr->totalScore = maxScore;
+	userPtr->next = NULL;
 
 	if (head == NULL) {
-		head = user_ptr;
+		head = userPtr;
 	}
 	else {
-		getLastNode(head)->next = user_ptr;
+		getLastNode(head)->next = userPtr;
 	}
 }
 
-void updateNodeWithName(User *head, char *name, int current_score) {
+/**
+* Updates the score of the node with the name specified
+* @param Head of user list, pointer to char of name, currentScore
+**/
+void updateNodeWithName(User *head, char *name, int currentScore) {
 	if (userIsInList(head, name)) {
-		User *user_ptr = findUserWithName(head, name);
-		if (current_score > (user_ptr->max_score)) {
-			user_ptr->max_score = current_score;
+		User *userPtr = findUserWithName(head, name);
+		if (currentScore > (userPtr->maxScore)) {
+			userPtr->maxScore = currentScore;
 		}
-		user_ptr->total_games++;
-		user_ptr->total_score += current_score;
+		userPtr->totalGames++;
+		userPtr->totalScore += currentScore;
 	}
 }
