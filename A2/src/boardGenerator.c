@@ -18,7 +18,6 @@
 void convertToBoard(char *letters, char ***board){
 
     /*allocate space for boggle board on heap in order to access it in main.*/
-    char *word;
     int i, j, t;
 
     i = 0;
