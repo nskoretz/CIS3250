@@ -1,3 +1,12 @@
+/**
+ * @file scoreboard.h
+ * @author Jacob Vink
+ * @date October 23 2017
+ * @version CIS*3250 Refactoring Lab Assignment
+ *
+ * @brief code for functions
+ **/
+
 /*********Changes made Jacob Vink******************
 -changed all variable names with _ to camel case
 -added { } braces to all for-loops and if statements
@@ -16,23 +25,27 @@
  **/
 unsigned hash(const char *s) {
     unsigned hashVal;
-    for (hashVal = 0; *s != '\0'; s++){
+
+    /*loops through each char hashing it to an int*/
+    for (hashVal = 0; *s != '\0'; s++) {
         hashVal = *s + 31 * hashVal;
     }
-    return hashVal ;
+    return hashVal;
 }
 
 /**Function that uses a key to search for a word in the hash table
  *@return pointer to found node, or null if the node is not found.
- *@param pointer to the dictionairy table
+ *@param pointer to the dictionary table
  *@param integer value of the table size
  *@param pointer to the key to be used to match nodes
  **/
-DNode * lookUp (DNode **dictionary, int hashSize, const char *key) {
+DNode *lookUp (DNode **dictionary, int hashSize, const char *key) {
     DNode *np;
     unsigned int hashVal = hash(key);
-    for (np = dictionary [hashVal % hashSize]; np !=NULL; np = np->next){
-        if (strcmp (key, np->key) == 0){
+
+    /*loops through each node and compares the value to key */
+    for (np = dictionary [hashVal % hashSize]; np != NULL; np = np->next) {
+        if (strcmp (key, np->key) == 0) {
             return np;
         }
     return NULL; //not found
@@ -41,18 +54,18 @@ DNode * lookUp (DNode **dictionary, int hashSize, const char *key) {
 
 /**Inserts a new node into the dictionairy
  *@return pointer to inserted node
- *@param pointer to the dictionairy table
+ *@param pointer to the dictionary table
  *@param integer value of the table size
  *@param pointer to the key value
  **/
-DNode * insert (DNode **dictionary, int hashSize,  const char *key) {
+DNode *insert (DNode **dictionary, int hashSize,  const char *key) {
     unsigned int hashVal;
     DNode *np;
 
-    if ((np = lookup (dictionary, hashSize, key)) == NULL ) {
+    if ((np = lookup (dictionary, hashSize, key)) == NULL) {
         np = (DNode *) malloc (sizeof (*np));
 
-        if (np == NULL || (np->key = copystr (key)) == NULL){
+        if (np == NULL || (np->key = copystr (key)) == NULL) {
             return NULL;
         }
         hashVal = hash (key) % hashSize;
@@ -63,16 +76,19 @@ DNode * insert (DNode **dictionary, int hashSize,  const char *key) {
     return np;
 }
 
-/**Frees memory inside the dictionairy table
- *@param pointer to the dictionairy table
+/**Frees memory inside the dictionary table
+ *@param pointer to the dictionary table
  *@param integer value of the table size
  **/
 void freeDictionary (DNode **dictionary, int hashSize) {
     int i;
+
     for (i=0; i<hashSize; i++) {
-        if (dictionary [i]!=NULL) { /*if there is an entry at position i */
+        if (dictionary [i] != NULL) { /*if there is an entry at position i */
             DNode *head = dictionary[i];
             DNode *current = head;
+
+            /* goes through the list freeing each node */
             while (current != NULL) {
                 DNode * temp = current;
                 current = current->next;
@@ -83,16 +99,16 @@ void freeDictionary (DNode **dictionary, int hashSize) {
     }
 }
 
-/** Function to make a coppy of char * s
- *@return pointer to a coppy of *s
- *@param pointer to the coppy of *s
+/** Function to make a copy of char * s
+ *@return pointer to a copy of *s
+ *@param pointer to the copy of *s
  **/
 char *copyStr(const char *s) { /* make a duplicate of s */
     char *p;
     int len = strlen(s);
 
     p = (char *) malloc(len+1); /* +1 for ?\0? */
-    if (p != NULL){
+    if (p != NULL) {
         strncpy(p, s, len);
     }
     p[len] = '\0';
