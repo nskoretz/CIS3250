@@ -53,8 +53,8 @@ char *convertToUpper2( char (*upper)[] ) {
  * @param gameBoard The game board to be freed and resets
  * @param inputArrayOfDice The standard dice that keep their values between games
  */
-void freeAndResetBoard( struct rolled_dice **gameBoard,
-    struct preset_dice *inputArrayOfDice ) {
+void freeAndResetBoard( RolledDice **gameBoard,
+    PresetDice *inputArrayOfDice ) {
 
     int i;
     for (i = 0; i < 4; i++) {
