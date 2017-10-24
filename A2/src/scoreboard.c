@@ -181,7 +181,7 @@ void printScoreboard(User *head) {
 void addNode(User *head, char *name, int maxScore) {
 	User *userPtr;
 	if (head != NULL) {
-		 userPtr = malloc(sizeof(user));
+		 userPtr = malloc(sizeof(User));
 	}
 	strcpy(userPtr->name, name);
 	userPtr->maxScore = maxScore;
