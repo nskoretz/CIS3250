@@ -17,3 +17,16 @@ To end the game, the user simply types the letter 'q' as their selection and the
 will end and print the scoreboard to the screen.
 
 This version of Boggle is not timed.
+
+/** COMPILATION INSTRUCTIONS **/
+To compile:
+	make
+
+To run:	
+	./bin/runTests
+
+User input
+submitting words found
+words need to be 3 letters long
+enter q to quit
+enter n to get score then enter name
