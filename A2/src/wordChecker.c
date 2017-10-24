@@ -49,9 +49,6 @@ int abidesRules(int i, int j, char *word, RolledDice **gameBoard, int subLen, in
 
     /* use subLen as index to see what letter to find */
 	int adjCell;
-	char currentLetter = word[subLen];
-	int ans = (subLen == (strlen(word)-1));
-
 
 	if(subLen == (strlen(word)-1)) {
 		return 1;
@@ -103,7 +100,7 @@ int abidesRules(int i, int j, char *word, RolledDice **gameBoard, int subLen, in
 int wordChecker(RolledDice **gameBoard, char *word){
 
     /* Initialize local variables */
-	int row, letter, col, m, n;
+	int row, col, m, n;
 	int **visited;
 	visited = malloc(sizeof(int * ) * 4);
 
@@ -126,9 +123,9 @@ int wordChecker(RolledDice **gameBoard, char *word){
 
 /*FIXED INTENDENTATION*/
 	/* Go through every node on the board cheching if the word can be found starting from that node */
-    for (int row = 0; row < 4; row++) {
-        for (int col = 0; col < 4; col++) {
-            if (abidesrules(row, col, word, gameBoard, 0, visited)){ /* Check if the word is found, starting at a specific coloumn and row */
+    for (row = 0; row < 4; row++) {
+        for (col = 0; col < 4; col++) {
+            if (abidesRules(row, col, word, gameBoard, 0, visited)){ /* Check if the word is found, starting at a specific coloumn and row */
                 free(visited[0]);
                 free(visited[1]);
                 free(visited[2]);
@@ -179,7 +176,6 @@ int testAbidesRules(int i, int j, char *word, char **gameBoard, int subLen, int 
 	/* use subLen as index to see what letter to find */
 	int adjCell;
 	char currentLetter = word[subLen];
-	int ans = (subLen == (strlen(word) - 1)); /* Boolean value stored in answer for true or false (1/0) */
 
 	if(subLen == (strlen(word) - 1)){
 		return 1;
@@ -210,11 +206,11 @@ int testAbidesRules(int i, int j, char *word, char **gameBoard, int subLen, int 
     for (adjCell = 0; adjCell < 8; adjCell++) {
 		
         newX = i + allX[adjCell];
-        newY = j + allX[adjCell];
+        newY = j + allY[adjCell];
 		
         if ((newX >= 0) && (newX < 4) && (newY >=0) && (newY < 4) && toupper(findLetter) == testGetLetter(newX, newY, gameBoard) && !visited[newX][newY]){
             visited[newX][newY] = 1;
-            ++sub_len;
+            ++subLen;
             result = testAbidesRules(newX, newY, word, gameBoard, subLen, visited);
             if (result){ /* word has been found  */
                 return 1;
@@ -238,7 +234,7 @@ int testWordChecker (char **boggle, char *word) {
 
     /*SAME CHANGES MADE HERE AS AS IN WORDCHECKER FUNCTION*/
     /* Initialize local variables */
-	int row, letter, col, m, n;
+	int row, col, m, n;
 	int **visited;
 	visited = malloc(sizeof(int * ) * 4);
 
@@ -260,8 +256,8 @@ int testWordChecker (char **boggle, char *word) {
 	}
 
 	/* Go through every node on the board cheching if the word can be found starting from that node  */
-    for (int row = 0; row < 4; row++) {
-        for (int col = 0; col < 4; col++) {
+    for (row = 0; row < 4; row++) {
+        for (col = 0; col < 4; col++) {
             if (testAbidesRules(row, col, word, boggle, 0, visited)) { /* Check if the word is found, starting at a specific coloumn and row */
                 free(visited[0]);
                 free(visited[1]);
@@ -292,7 +288,7 @@ int hcWordChecker(char boggle[][4], char *word) {
 
     /*SAME CHANGES MADE HERE AS AS IN WORDCHECKER FUNCTION*/
     /* Initialize local variables */
-	int row, letter, col, m, n;
+	int row, col, m, n;
 	int **visited;
 	visited = malloc(sizeof(int * ) * 4);
 
@@ -314,8 +310,8 @@ int hcWordChecker(char boggle[][4], char *word) {
 	}
 
 	/* Go through every node on the board cheching if the word can be found starting from that node */
-    for (int row = 0; row < 4; row++) {
-        for (int col = 0; col < 4; col++) {
+    for (row = 0; row < 4; row++) {
+        for (col = 0; col < 4; col++) {
             if (hcAbidesRules(row, col, word, boggle, 0, visited)) { /* Check if the word is found, starting at a specific coloumn and row */
                 free(visited[0]);
                 free(visited[1]);
@@ -354,7 +350,6 @@ int hcAbidesRules(int i, int j, char *word, char boggle[][4], int subLen, int **
 	/* use subLen as index to see what letter to find */
 	int adjCell;
 	char currentLetter = word[subLen];
-	int ans = (subLen == (strlen(word) - 1));
 	if (subLen == (strlen(word) - 1)){
 		return 1;
 	}
