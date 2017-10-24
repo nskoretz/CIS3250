@@ -5,6 +5,10 @@
  *
  * @brief This program models the Boggle board game
  */
+
+/**
+ * Changes made October 24th by Jackson Firth 0880887
+ */
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
