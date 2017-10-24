@@ -27,7 +27,7 @@
 /** 
  * The pre-set dice which keep their values between games.
  */
-typedef struct PresetDice {
+typedef struct presetDice {
     char *configurations;
     int position;
 } PresetDice;
@@ -35,7 +35,7 @@ typedef struct PresetDice {
 /**
  * The rolled dice which do not keep their values between games.
  */
-typedef struct RolledDice {
+typedef struct rolledDice {
     char character;
     int position;
 } RolledDice;
