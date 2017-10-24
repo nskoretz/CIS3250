@@ -1,8 +1,10 @@
+#Made by Ori Talmor
+
 CC = gcc
 CFLAGS = -Wall -Iinclude -g -std=c99
 
 test: makebin
-	$(CC) $(CFLAGS) -o bin/runTests -Llib src/*.c -Iinclude 
+	$(CC) $(CFLAGS) -o bin/runTests -Llib src/*.c 
     
 makebin:
 	mkdir -p bin
