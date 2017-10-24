@@ -56,7 +56,7 @@ void freeAll(User *head) {
 * Gets user from specified index
 * @param Head of user list, index
 * @return Pointer to user with index, or NULL
-*//
+**/
 User *getUserAtIndex(User *head, int index) {
 	if (head == NULL) {
 		return NULL;

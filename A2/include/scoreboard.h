@@ -16,7 +16,7 @@ typedef struct User {
     int maxScore;
     int totalGames;
     int totalScore;
-    struct user *next;
+    struct User *next;
 } User;
 
 /**
