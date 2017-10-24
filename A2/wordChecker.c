@@ -29,7 +29,7 @@ version
 *@param j integer representing the coloumn in the game board
 *@param gameBoard pointer to a gameBoard array storing the character and position of each index in the board (2D array)
 **/
-char getLetter(int i, int j, struct RolledDice **gameBoard){
+char getLetter(int i, int j, RolledDice **gameBoard){
     return gameBoard[i][j].character;
 }
 
@@ -45,7 +45,7 @@ char getLetter(int i, int j, struct RolledDice **gameBoard){
 *@param subLen integer representing the last index from a string whose character has been found on the game board
 *@param visited pointer to an array of characters that have already been found
 **/
-int abidesRules(int i, int j, char *word, struct RolledDice **gameBoard, int subLen, int **visited){
+int abidesRules(int i, int j, char *word, RolledDice **gameBoard, int subLen, int **visited){
 
     /* use subLen as index to see what letter to find */
 	int adjCell;
@@ -100,7 +100,7 @@ int abidesRules(int i, int j, char *word, struct RolledDice **gameBoard, int sub
 *@param gameBoard pointer to a gameBoard array storing the character and position of each index in the board (2D array)
 *@param word string containing the word being sought after on the board
 **/
-int wordChecker(struct RolledDice **gameBoard, char *word){
+int wordChecker(RolledDice **gameBoard, char *word){
 
     /* Initialize local variables */
 	int row, letter, col, m, n;
