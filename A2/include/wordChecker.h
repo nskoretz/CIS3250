@@ -1,3 +1,8 @@
+/**
+ * @file wordChecker.h
+ * @date October 23rd 2017
+ * @brief This file checks if a word exists on the boggle board using different data types
+ */
 #include <string.h>
 #include "boardGenerator.h"
 #include <stdlib.h>
