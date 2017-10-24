@@ -48,8 +48,8 @@ DNode *lookUp (DNode **dictionary, int hashSize, const char *key) {
         if (strcmp (key, np->key) == 0) {
             return np;
         }
-    return NULL; //not found
     }
+    return NULL; //not found
 }
 
 /**Inserts a new node into the dictionairy
@@ -62,10 +62,10 @@ DNode *insert (DNode **dictionary, int hashSize,  const char *key) {
     unsigned int hashVal;
     DNode *np;
 
-    if ((np = lookup (dictionary, hashSize, key)) == NULL) {
-        np = (DNode *) malloc (sizeof (*np));
+    if ((lookUp(dictionary, hashSize, key)) == NULL) {
+        np = (DNode *)malloc(sizeof (*np));
 
-        if (np == NULL || (np->key = copystr (key)) == NULL) {
+        if (np == NULL || (np->key = copyStr (key)) == NULL) {
             return NULL;
         }
         hashVal = hash (key) % hashSize;
