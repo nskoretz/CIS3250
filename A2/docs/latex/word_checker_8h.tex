@@ -1,0 +1,252 @@
+\hypertarget{word_checker_8h}{}\section{include/word\+Checker.h File Reference}
+\label{word_checker_8h}\index{include/word\+Checker.\+h@{include/word\+Checker.\+h}}
+
+
+This file checks if a word exists on the boggle board using different data types.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}board\+Generator.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{word_checker_8h_a913e292d2b4a956902ca5d92370b204b}{word\+Checker} (\hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board, char $\ast$word)
+\item 
+int \hyperlink{word_checker_8h_a2a336d0f20eafb2027573a5c9ab28dd3}{abides\+Rules} (int i, int j, char $\ast$word, \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board, int sub\+Len, int $\ast$$\ast$visited)
+\item 
+char \hyperlink{word_checker_8h_a990d62fa4cf155e1013d5070a1900228}{get\+Letter} (int i, int j, \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board)
+\item 
+int \hyperlink{word_checker_8h_a03759b44436ca8b1517f248572ba629c}{test\+Word\+Checker} (char $\ast$$\ast$boggle, char $\ast$word)
+\item 
+int \hyperlink{word_checker_8h_a15de051280653617ab3a0b6526196c64}{test\+Abides\+Rules} (int i, int j, char $\ast$word, char $\ast$$\ast$game\+Board, int sub\+Len, int $\ast$$\ast$visited)
+\item 
+char \hyperlink{word_checker_8h_a4e46a51dd2ac1745eac02707c174a6ab}{test\+Get\+Letter} (int i, int j, char $\ast$$\ast$boggle)
+\item 
+int \hyperlink{word_checker_8h_ae0d9372d6be99e473ad536b1706336f2}{hc\+Word\+Checker} (char boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]}, char $\ast$word)
+\item 
+char \hyperlink{word_checker_8h_a7f00be2601d8e147864cdf0d4368a4f4}{hc\+Get\+Letter} (int i, int j, char boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]})
+\item 
+int \hyperlink{word_checker_8h_aeebb447277454699f857ea05cdb5ee77}{hc\+Abides\+Rules} (int i, int j, char $\ast$word, char boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]}, int sub\+Len, int $\ast$$\ast$visited)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file checks if a word exists on the boggle board using different data types. 
+
+\begin{DoxyDate}{Date}
+October 23rd 2017 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{word_checker_8h_a2a336d0f20eafb2027573a5c9ab28dd3}\label{word_checker_8h_a2a336d0f20eafb2027573a5c9ab28dd3}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!abides\+Rules@{abides\+Rules}}
+\index{abides\+Rules@{abides\+Rules}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{abides\+Rules()}{abidesRules()}}
+{\footnotesize\ttfamily int abides\+Rules (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{char $\ast$}]{word,  }\item[{\hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board,  }\item[{int}]{sub\+Len,  }\item[{int $\ast$$\ast$}]{visited }\end{DoxyParamCaption})}
+
+Function to recursively check every adjacent piece on a board and see if it is the next character needed by the word being sought after. If it is, move onto the next piece to be found and recursively call this function until all characters are found (or not found) \begin{DoxyPrecond}{Precondition}
+game\+Board and visited must exist, i, j, and sub\+Len must be non-\/negative real numbers, 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+integer whether the word was found or not on the board 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer representing the row in the game board \\
+\hline
+{\em j} & integer representing the coloumn in the game board \\
+\hline
+{\em word} & string containing the word being sought after on the board \\
+\hline
+{\em game\+Board} & pointer to a game\+Board array storing the character and position of each index in the board (2D array) \\
+\hline
+{\em sub\+Len} & integer representing the last index from a string whose character has been found on the game board \\
+\hline
+{\em visited} & pointer to an array of characters that have already been found \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_a990d62fa4cf155e1013d5070a1900228}\label{word_checker_8h_a990d62fa4cf155e1013d5070a1900228}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!get\+Letter@{get\+Letter}}
+\index{get\+Letter@{get\+Letter}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{get\+Letter()}{getLetter()}}
+{\footnotesize\ttfamily char get\+Letter (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board }\end{DoxyParamCaption})}
+
+Function to grab a character off the gameboard \begin{DoxyPrecond}{Precondition}
+game\+Board must exist, i and j must be non-\/negative real numbers 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+character at a given position on the board is returned 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+char representing the character at the given position 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer representing the row in the game board \\
+\hline
+{\em j} & integer representing the coloumn in the game board \\
+\hline
+{\em game\+Board} & pointer to a game\+Board array storing the character and position of each index in the board (2D array) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_aeebb447277454699f857ea05cdb5ee77}\label{word_checker_8h_aeebb447277454699f857ea05cdb5ee77}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!hc\+Abides\+Rules@{hc\+Abides\+Rules}}
+\index{hc\+Abides\+Rules@{hc\+Abides\+Rules}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{hc\+Abides\+Rules()}{hcAbidesRules()}}
+{\footnotesize\ttfamily int hc\+Abides\+Rules (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{char $\ast$}]{word,  }\item[{char}]{boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]},  }\item[{int}]{sub\+Len,  }\item[{int $\ast$$\ast$}]{visited }\end{DoxyParamCaption})}
+
+Function to recursively check every adjacent piece on a board and see if it is the next character needed by the word being sought after. If it is, move onto the next piece to be found and recursively call this function until all characters are found (or not found) \begin{DoxyPrecond}{Precondition}
+game\+Board and visited must exist, i, j, and sub\+Len must be non-\/negative real numbers, 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+integer whether the word was found or not on the board 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer representing the row in the game board \\
+\hline
+{\em j} & integer representing the coloumn in the game board \\
+\hline
+{\em word} & string containing the word being sought after on the board \\
+\hline
+{\em game\+Board} & pointer to a 2d character array \\
+\hline
+{\em sub\+Len} & integer representing the last index from a string whose character has been found on the game board \\
+\hline
+{\em visited} & pointer to an array of characters that have already been found \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_a7f00be2601d8e147864cdf0d4368a4f4}\label{word_checker_8h_a7f00be2601d8e147864cdf0d4368a4f4}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!hc\+Get\+Letter@{hc\+Get\+Letter}}
+\index{hc\+Get\+Letter@{hc\+Get\+Letter}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{hc\+Get\+Letter()}{hcGetLetter()}}
+{\footnotesize\ttfamily char hc\+Get\+Letter (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{char}]{boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+Function to grab a character from a 2d character board which is initialized with 4 coloumns \begin{DoxyPrecond}{Precondition}
+boggle must exist, i and j must be non-\/negative real numbers 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+character at a given position on the 2d character array is returned 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+char representing the character at the given position 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer representing the row in the 2d character array \\
+\hline
+{\em j} & integer representing the coloumn in the 2d character array \\
+\hline
+{\em boggle} & pointer to a character array initialized with 4 coloumns storing the a character in each index on the boggle board (2D array of characters) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_ae0d9372d6be99e473ad536b1706336f2}\label{word_checker_8h_ae0d9372d6be99e473ad536b1706336f2}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!hc\+Word\+Checker@{hc\+Word\+Checker}}
+\index{hc\+Word\+Checker@{hc\+Word\+Checker}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{hc\+Word\+Checker()}{hcWordChecker()}}
+{\footnotesize\ttfamily int hc\+Word\+Checker (\begin{DoxyParamCaption}\item[{char}]{boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]},  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+Function to check if a word exists in an 2d array of characters. Creates an array of visited nodes on the board, then checks if a word exists on a board given a starting row and coloumn. Checks the entire board for the word until it is found. \begin{DoxyPrecond}{Precondition}
+boggle and word must exist 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+integer whether the word was found or not on the board 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Board} & pointer to a 2d character array initialized with 4 coloumns \\
+\hline
+{\em word} & string containing the word being sought after on the board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_a15de051280653617ab3a0b6526196c64}\label{word_checker_8h_a15de051280653617ab3a0b6526196c64}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!test\+Abides\+Rules@{test\+Abides\+Rules}}
+\index{test\+Abides\+Rules@{test\+Abides\+Rules}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{test\+Abides\+Rules()}{testAbidesRules()}}
+{\footnotesize\ttfamily int test\+Abides\+Rules (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{char $\ast$}]{word,  }\item[{char $\ast$$\ast$}]{game\+Board,  }\item[{int}]{sub\+Len,  }\item[{int $\ast$$\ast$}]{visited }\end{DoxyParamCaption})}
+
+Function to recursively check every adjacent piece on a board and see if it is the next character needed by the word being sought after. If it is, move onto the next piece to be found and recursively call this function until all characters are found (or not found) \begin{DoxyPrecond}{Precondition}
+game\+Board and visited must exist, i, j, and sub\+Len must be non-\/negative real numbers, 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+integer whether the word was found or not on the board 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer representing the row in the game board \\
+\hline
+{\em j} & integer representing the coloumn in the game board \\
+\hline
+{\em word} & string containing the word being sought after on the board \\
+\hline
+{\em game\+Board} & pointer to a 2d character array \\
+\hline
+{\em sub\+Len} & integer representing the last index from a string whose character has been found on the game board \\
+\hline
+{\em visited} & pointer to an array of characters that have already been found \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_a4e46a51dd2ac1745eac02707c174a6ab}\label{word_checker_8h_a4e46a51dd2ac1745eac02707c174a6ab}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!test\+Get\+Letter@{test\+Get\+Letter}}
+\index{test\+Get\+Letter@{test\+Get\+Letter}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{test\+Get\+Letter()}{testGetLetter()}}
+{\footnotesize\ttfamily char test\+Get\+Letter (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{char $\ast$$\ast$}]{boggle }\end{DoxyParamCaption})}
+
+Function to grab a character from a 2d character board \begin{DoxyPrecond}{Precondition}
+boggle must exist, i and j must be non-\/negative real numbers 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+character at a given position on the 2d character array is returned 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+char representing the character at the given position 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer representing the row in the 2d character array \\
+\hline
+{\em j} & integer representing the coloumn in the 2d character array \\
+\hline
+{\em boggle} & pointer to a character array storing the a character in each index on the boggle board (2D array of characters) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_a03759b44436ca8b1517f248572ba629c}\label{word_checker_8h_a03759b44436ca8b1517f248572ba629c}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!test\+Word\+Checker@{test\+Word\+Checker}}
+\index{test\+Word\+Checker@{test\+Word\+Checker}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{test\+Word\+Checker()}{testWordChecker()}}
+{\footnotesize\ttfamily int test\+Word\+Checker (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{boggle,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+Function to check if a word exists in an 2d array of characters. Creates an array of visited nodes on the board, then checks if a word exists on a board given a starting row and coloumn. Checks the entire board for the word until it is found. \begin{DoxyPrecond}{Precondition}
+boggle and word must exist 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+integer whether the word was found or not on the board 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Board} & pointer to a 2d character array \\
+\hline
+{\em word} & string containing the word being sought after on the board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{word_checker_8h_a913e292d2b4a956902ca5d92370b204b}\label{word_checker_8h_a913e292d2b4a956902ca5d92370b204b}} 
+\index{word\+Checker.\+h@{word\+Checker.\+h}!word\+Checker@{word\+Checker}}
+\index{word\+Checker@{word\+Checker}!word\+Checker.\+h@{word\+Checker.\+h}}
+\subsubsection{\texorpdfstring{word\+Checker()}{wordChecker()}}
+{\footnotesize\ttfamily int word\+Checker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+Function to check if a word exists on the board. Creates an array of visited nodes on the board, then checks if a word exists on a board given a starting row and coloumn. Checks the entire board for the word until it is found. \begin{DoxyPrecond}{Precondition}
+game\+Board and word must exist 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+integer whether the word was found or not on the board 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Board} & pointer to a game\+Board array storing the character and position of each index in the board (2D array) \\
+\hline
+{\em word} & string containing the word being sought after on the board \\
+\hline
+\end{DoxyParams}

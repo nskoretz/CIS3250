@@ -1,0 +1,149 @@
+\hypertarget{dictionary_8h}{}\section{include/dictionary.h File Reference}
+\label{dictionary_8h}\index{include/dictionary.\+h@{include/dictionary.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_d_node}{D\+Node}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dictionary_8h_af512b5919ae9b1aa01d61324029f10e4}{B\+I\+G\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}~20000
+\item 
+\#define \hyperlink{dictionary_8h_a072919b4b5b964f864a2a55c7ba35894}{S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}~100
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_d_node}{D\+Node} \hyperlink{dictionary_8h_a1d24bf18906386ee498686b81fb048aa}{D\+Node}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{dictionary_8h_a0a3bbeeb86be30b041ba1cf029b83288}{copy\+Str} (const char $\ast$)
+\item 
+unsigned \hyperlink{dictionary_8h_a204226b6218d6556602e0bb20b4c9fa3}{hash} (const char $\ast$s)
+\item 
+\hyperlink{struct_d_node}{D\+Node} $\ast$ \hyperlink{dictionary_8h_a4f5e1fe58dd466a6b9847928cca61193}{look\+Up} (\hyperlink{struct_d_node}{D\+Node} $\ast$$\ast$dictionary, int hash\+Size, const char $\ast$key)
+\item 
+\hyperlink{struct_d_node}{D\+Node} $\ast$ \hyperlink{dictionary_8h_a5ba7889444d53b634d5d25bde503069c}{insert} (\hyperlink{struct_d_node}{D\+Node} $\ast$$\ast$dictionary, int hash\+Size, const char $\ast$key)
+\item 
+void \hyperlink{dictionary_8h_a091e014fc158cb8ee432caacd9d35ac8}{free\+Dictionary} (\hyperlink{struct_d_node}{D\+Node} $\ast$$\ast$dictionary, int hash\+Size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dictionary_8h_af512b5919ae9b1aa01d61324029f10e4}\label{dictionary_8h_af512b5919ae9b1aa01d61324029f10e4}} 
+\index{dictionary.\+h@{dictionary.\+h}!B\+I\+G\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE@{B\+I\+G\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}}
+\index{B\+I\+G\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE@{B\+I\+G\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{B\+I\+G\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}{BIG\_HASH\_SIZE}}
+{\footnotesize\ttfamily \#define B\+I\+G\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE~20000}
+
+\mbox{\Hypertarget{dictionary_8h_a072919b4b5b964f864a2a55c7ba35894}\label{dictionary_8h_a072919b4b5b964f864a2a55c7ba35894}} 
+\index{dictionary.\+h@{dictionary.\+h}!S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE@{S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}}
+\index{S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE@{S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE}{SMALL\_HASH\_SIZE}}
+{\footnotesize\ttfamily \#define S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+ZE~100}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{dictionary_8h_a1d24bf18906386ee498686b81fb048aa}\label{dictionary_8h_a1d24bf18906386ee498686b81fb048aa}} 
+\index{dictionary.\+h@{dictionary.\+h}!D\+Node@{D\+Node}}
+\index{D\+Node@{D\+Node}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{D\+Node}{DNode}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_d_node}{D\+Node} \hyperlink{struct_d_node}{D\+Node}}
+
+node structure 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{dictionary_8h_a0a3bbeeb86be30b041ba1cf029b83288}\label{dictionary_8h_a0a3bbeeb86be30b041ba1cf029b83288}} 
+\index{dictionary.\+h@{dictionary.\+h}!copy\+Str@{copy\+Str}}
+\index{copy\+Str@{copy\+Str}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{copy\+Str()}{copyStr()}}
+{\footnotesize\ttfamily char$\ast$ copy\+Str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Function to make a copy of char $\ast$ s \begin{DoxyReturn}{Returns}
+pointer to a copy of $\ast$s 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the copy of $\ast$s \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_a091e014fc158cb8ee432caacd9d35ac8}\label{dictionary_8h_a091e014fc158cb8ee432caacd9d35ac8}} 
+\index{dictionary.\+h@{dictionary.\+h}!free\+Dictionary@{free\+Dictionary}}
+\index{free\+Dictionary@{free\+Dictionary}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{free\+Dictionary()}{freeDictionary()}}
+{\footnotesize\ttfamily void free\+Dictionary (\begin{DoxyParamCaption}\item[{\hyperlink{struct_d_node}{D\+Node} $\ast$$\ast$}]{dictionary,  }\item[{int}]{hash\+Size }\end{DoxyParamCaption})}
+
+Frees memory inside the dictionary table 
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the dictionary table \\
+\hline
+{\em integer} & value of the table size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_a204226b6218d6556602e0bb20b4c9fa3}\label{dictionary_8h_a204226b6218d6556602e0bb20b4c9fa3}} 
+\index{dictionary.\+h@{dictionary.\+h}!hash@{hash}}
+\index{hash@{hash}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily unsigned hash (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+form hash value for string s this produces a starting value in the dictionary array \begin{DoxyReturn}{Returns}
+unsigned hash value 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to a string to be used to create a hash value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_a5ba7889444d53b634d5d25bde503069c}\label{dictionary_8h_a5ba7889444d53b634d5d25bde503069c}} 
+\index{dictionary.\+h@{dictionary.\+h}!insert@{insert}}
+\index{insert@{insert}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \hyperlink{struct_d_node}{D\+Node}$\ast$ insert (\begin{DoxyParamCaption}\item[{\hyperlink{struct_d_node}{D\+Node} $\ast$$\ast$}]{dictionary,  }\item[{int}]{hash\+Size,  }\item[{const char $\ast$}]{key }\end{DoxyParamCaption})}
+
+Inserts a new node into the dictionary \begin{DoxyReturn}{Returns}
+pointer to inserted node 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the dictionary table \\
+\hline
+{\em integer} & value of the table size \\
+\hline
+{\em pointer} & to the key value\\
+\hline
+\end{DoxyParams}
+Inserts a new node into the dictionairy \begin{DoxyReturn}{Returns}
+pointer to inserted node 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the dictionary table \\
+\hline
+{\em integer} & value of the table size \\
+\hline
+{\em pointer} & to the key value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_a4f5e1fe58dd466a6b9847928cca61193}\label{dictionary_8h_a4f5e1fe58dd466a6b9847928cca61193}} 
+\index{dictionary.\+h@{dictionary.\+h}!look\+Up@{look\+Up}}
+\index{look\+Up@{look\+Up}!dictionary.\+h@{dictionary.\+h}}
+\subsubsection{\texorpdfstring{look\+Up()}{lookUp()}}
+{\footnotesize\ttfamily \hyperlink{struct_d_node}{D\+Node}$\ast$ look\+Up (\begin{DoxyParamCaption}\item[{\hyperlink{struct_d_node}{D\+Node} $\ast$$\ast$}]{dictionary,  }\item[{int}]{hash\+Size,  }\item[{const char $\ast$}]{key }\end{DoxyParamCaption})}
+
+Function that uses a key to search for a word in the hash table \begin{DoxyReturn}{Returns}
+pointer to found node, or null if the node is not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the dictionary table \\
+\hline
+{\em integer} & value of the table size \\
+\hline
+{\em pointer} & to the key to be used to match nodes \\
+\hline
+\end{DoxyParams}

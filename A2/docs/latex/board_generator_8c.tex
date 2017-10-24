@@ -1,0 +1,83 @@
+\hypertarget{board_generator_8c}{}\section{src/board\+Generator.c File Reference}
+\label{board_generator_8c}\index{src/board\+Generator.\+c@{src/board\+Generator.\+c}}
+{\ttfamily \#include \char`\"{}board\+Generator.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{board_generator_8c_a63f652ef56ef9c0b10f706c6cabb4c41}{convert\+To\+Board} (char $\ast$letters, char $\ast$$\ast$$\ast$board)
+\item 
+void \hyperlink{board_generator_8c_aec91ec8ec550a6b30b19bb98dd213f6e}{print\+Game\+Board} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board)
+\item 
+void \hyperlink{board_generator_8c_a82adcd9fc8d54124b089402d68cc60de}{print\+Hc\+Board} (char boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]})
+\item 
+void \hyperlink{board_generator_8c_a4489e68bcd4dffa5b3c03f32b9925213}{initialize\+Preset\+Dice} (struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$input\+Array\+Of\+Dice)
+\item 
+void \hyperlink{board_generator_8c_a7a96a21eaecd07b6c549781815e0c866}{roll\+But\+Not\+Shuffle\+Dice} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$game\+Dice, struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$input\+Array\+Of\+Dice)
+\item 
+void \hyperlink{board_generator_8c_aec4f1cef1c07a91751b9aa8bfd9ac716}{roll\+Dice} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board, struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$input\+Array\+Of\+Dice)
+\item 
+void \hyperlink{board_generator_8c_a4e83aa2661e486a2de066e84f9128d9f}{shuffle\+Rolled\+Dice\+Positions} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$game\+Dice)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{board_generator_8c_a63f652ef56ef9c0b10f706c6cabb4c41}\label{board_generator_8c_a63f652ef56ef9c0b10f706c6cabb4c41}} 
+\index{board\+Generator.\+c@{board\+Generator.\+c}!convert\+To\+Board@{convert\+To\+Board}}
+\index{convert\+To\+Board@{convert\+To\+Board}!board\+Generator.\+c@{board\+Generator.\+c}}
+\subsubsection{\texorpdfstring{convert\+To\+Board()}{convertToBoard()}}
+{\footnotesize\ttfamily void convert\+To\+Board (\begin{DoxyParamCaption}\item[{char $\ast$}]{letters,  }\item[{char $\ast$$\ast$$\ast$}]{board }\end{DoxyParamCaption})}
+
+Converts board from a string version to 2D array. Used in test mode. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_generator_8c_a4489e68bcd4dffa5b3c03f32b9925213}\label{board_generator_8c_a4489e68bcd4dffa5b3c03f32b9925213}} 
+\index{board\+Generator.\+c@{board\+Generator.\+c}!initialize\+Preset\+Dice@{initialize\+Preset\+Dice}}
+\index{initialize\+Preset\+Dice@{initialize\+Preset\+Dice}!board\+Generator.\+c@{board\+Generator.\+c}}
+\subsubsection{\texorpdfstring{initialize\+Preset\+Dice()}{initializePresetDice()}}
+{\footnotesize\ttfamily void initialize\+Preset\+Dice (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$}]{input\+Array\+Of\+Dice }\end{DoxyParamCaption})}
+
+Initializes the dice in the list of pre-\/set dice. Call once at program start.
+
+All the variable names are now replaced with camel\+Case equivalents and struct types are in Pascal\+Case. Additionally all variables are initialized and defined at the top. And all the comments are now are also made compatible to older c versions. \mbox{\Hypertarget{board_generator_8c_aec91ec8ec550a6b30b19bb98dd213f6e}\label{board_generator_8c_aec91ec8ec550a6b30b19bb98dd213f6e}} 
+\index{board\+Generator.\+c@{board\+Generator.\+c}!print\+Game\+Board@{print\+Game\+Board}}
+\index{print\+Game\+Board@{print\+Game\+Board}!board\+Generator.\+c@{board\+Generator.\+c}}
+\subsubsection{\texorpdfstring{print\+Game\+Board()}{printGameBoard()}}
+{\footnotesize\ttfamily void print\+Game\+Board (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board }\end{DoxyParamCaption})}
+
+Prints a visualization of the input array of \hyperlink{struct_rolled_dice}{Rolled\+Dice}.
+
+All the variable names are now replaced with camel\+Case equivalents and struct types are in Pascal\+Case. Additionally all variables are initialized and defined at the top. And all the comments are now are also made compatible to older c versions. \mbox{\Hypertarget{board_generator_8c_a82adcd9fc8d54124b089402d68cc60de}\label{board_generator_8c_a82adcd9fc8d54124b089402d68cc60de}} 
+\index{board\+Generator.\+c@{board\+Generator.\+c}!print\+Hc\+Board@{print\+Hc\+Board}}
+\index{print\+Hc\+Board@{print\+Hc\+Board}!board\+Generator.\+c@{board\+Generator.\+c}}
+\subsubsection{\texorpdfstring{print\+Hc\+Board()}{printHcBoard()}}
+{\footnotesize\ttfamily void print\+Hc\+Board (\begin{DoxyParamCaption}\item[{char}]{boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+Prints a visualization of the hurrent board.
+
+All the variable names are now replaced with camel\+Case equivalents. Additionally all variables are initialized and defined at the top. All the comments are now are also made compatible to older c versions. There was an indent fix as well. \mbox{\Hypertarget{board_generator_8c_a7a96a21eaecd07b6c549781815e0c866}\label{board_generator_8c_a7a96a21eaecd07b6c549781815e0c866}} 
+\index{board\+Generator.\+c@{board\+Generator.\+c}!roll\+But\+Not\+Shuffle\+Dice@{roll\+But\+Not\+Shuffle\+Dice}}
+\index{roll\+But\+Not\+Shuffle\+Dice@{roll\+But\+Not\+Shuffle\+Dice}!board\+Generator.\+c@{board\+Generator.\+c}}
+\subsubsection{\texorpdfstring{roll\+But\+Not\+Shuffle\+Dice()}{rollButNotShuffleDice()}}
+{\footnotesize\ttfamily void roll\+But\+Not\+Shuffle\+Dice (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$}]{game\+Dice,  }\item[{struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$}]{input\+Array\+Of\+Dice }\end{DoxyParamCaption})}
+
+Shuffles an array of rolled dice. But doesn\textquotesingle{}t move the positions.
+
+All the variable names are now replaced with camel\+Case equivalents and struct types are in Pascal\+Case. Additionally all variables are initialized and defined at the top. And all the comments are now are also made compatible to older c versions. Indenting for the parameters have been fixed. \mbox{\Hypertarget{board_generator_8c_aec4f1cef1c07a91751b9aa8bfd9ac716}\label{board_generator_8c_aec4f1cef1c07a91751b9aa8bfd9ac716}} 
+\index{board\+Generator.\+c@{board\+Generator.\+c}!roll\+Dice@{roll\+Dice}}
+\index{roll\+Dice@{roll\+Dice}!board\+Generator.\+c@{board\+Generator.\+c}}
+\subsubsection{\texorpdfstring{roll\+Dice()}{rollDice()}}
+{\footnotesize\ttfamily void roll\+Dice (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board,  }\item[{struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$}]{input\+Array\+Of\+Dice }\end{DoxyParamCaption})}
+
+Rolls the dice to be used at the start of the game and shuffles them, putting the dice into the 2D array game\+Dice. Call once at the start of every game.
+
+All the variable names are now replaced with camel\+Case equivalents and struct types are in Pascal\+Case. Additionally all variables are initialized and defined at the top. And all the comments are now are also made compatible to older c versions. Indenting for the parameters have been fixed. \mbox{\Hypertarget{board_generator_8c_a4e83aa2661e486a2de066e84f9128d9f}\label{board_generator_8c_a4e83aa2661e486a2de066e84f9128d9f}} 
+\index{board\+Generator.\+c@{board\+Generator.\+c}!shuffle\+Rolled\+Dice\+Positions@{shuffle\+Rolled\+Dice\+Positions}}
+\index{shuffle\+Rolled\+Dice\+Positions@{shuffle\+Rolled\+Dice\+Positions}!board\+Generator.\+c@{board\+Generator.\+c}}
+\subsubsection{\texorpdfstring{shuffle\+Rolled\+Dice\+Positions()}{shuffleRolledDicePositions()}}
+{\footnotesize\ttfamily void shuffle\+Rolled\+Dice\+Positions (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$}]{game\+Dice }\end{DoxyParamCaption})}
+
+Shuffles an array of rolled dice. Helper function.
+
+All the variable names are now replaced with camel\+Case equivalents and struct types are in Pascal\+Case. Additionally all variables are initialized and defined at the top. And all the comments are now are also made compatible to older c versions. 

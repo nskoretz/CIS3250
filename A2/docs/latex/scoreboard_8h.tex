@@ -1,0 +1,319 @@
+\hypertarget{scoreboard_8h}{}\section{include/scoreboard.h File Reference}
+\label{scoreboard_8h}\index{include/scoreboard.\+h@{include/scoreboard.\+h}}
+
+
+Holds function headers.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_user}{User}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_user}{User} \hyperlink{scoreboard_8h_aa97b599f3a380ed43ac18edfc944482e}{User}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_user}{User} $\ast$ \hyperlink{scoreboard_8h_a6697f7f114c9bb66382b6f3023a1c2c6}{find\+User\+With\+Name} (\hyperlink{struct_user}{User} $\ast$head, char $\ast$name\+To\+Find)
+\item 
+\hyperlink{struct_user}{User} $\ast$ \hyperlink{scoreboard_8h_abaa168c051d19c06b782b2e0b08f622b}{get\+User\+At\+Index} (\hyperlink{struct_user}{User} $\ast$head, int index)
+\item 
+int \hyperlink{scoreboard_8h_abbf564a748a5c030ec38864c9ed9d256}{get\+Index\+Of\+User\+With\+Name} (\hyperlink{struct_user}{User} $\ast$head, char $\ast$name\+To\+Find)
+\item 
+int \hyperlink{scoreboard_8h_ab76e857df873800ef2f76dc9400fc2c5}{get\+Length} (\hyperlink{struct_user}{User} $\ast$head)
+\item 
+\hyperlink{struct_user}{User} $\ast$ \hyperlink{scoreboard_8h_a6a857696a7b8cf46793c2c33b0d73c08}{get\+Last\+Node} (\hyperlink{struct_user}{User} $\ast$head)
+\item 
+void \hyperlink{scoreboard_8h_a7b945683c5d303395a8dd76df42eea23}{print\+Scoreboard} (\hyperlink{struct_user}{User} $\ast$head)
+\item 
+void \hyperlink{scoreboard_8h_ae127f31bf8ee7ceeeecbf1b48049926f}{free\+All} (\hyperlink{struct_user}{User} $\ast$head)
+\item 
+void \hyperlink{scoreboard_8h_aeb1a24c583e1ff35fe5c53504a721f2f}{add\+Node} (\hyperlink{struct_user}{User} $\ast$head, char $\ast$name, int max\+Score)
+\item 
+int \hyperlink{scoreboard_8h_a99b08e2cabeba6521b87370c9d6b4b94}{user\+Is\+In\+List} (\hyperlink{struct_user}{User} $\ast$head, char $\ast$name\+To\+Find)
+\item 
+void \hyperlink{scoreboard_8h_ae85864d6a437484ce3490514b655da45}{update\+Node\+With\+Name} (\hyperlink{struct_user}{User} $\ast$head, char $\ast$name, int current\+Score)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Holds function headers. 
+
+code for functions
+
+\begin{DoxyAuthor}{Author}
+Jacob Vink 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 23 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+C\+I\+S$\ast$3250 Refactoring Lab Assignment
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 17 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+C\+I\+S$\ast$3250 Refactoring Lab Assignment  + Team Members but mostly Jackson 
+\end{DoxyVersion}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{scoreboard_8h_aa97b599f3a380ed43ac18edfc944482e}\label{scoreboard_8h_aa97b599f3a380ed43ac18edfc944482e}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!User@{User}}
+\index{User@{User}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{User}{User}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_user}{User}  \hyperlink{struct_user}{User}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{scoreboard_8h_aeb1a24c583e1ff35fe5c53504a721f2f}\label{scoreboard_8h_aeb1a24c583e1ff35fe5c53504a721f2f}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!add\+Node@{add\+Node}}
+\index{add\+Node@{add\+Node}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{add\+Node()}{addNode()}}
+{\footnotesize\ttfamily void add\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head,  }\item[{char $\ast$}]{name,  }\item[{int}]{max\+Score }\end{DoxyParamCaption})}
+
+Function to add node
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+{\em name} & Pointer to name of user \\
+\hline
+{\em max\+Score} & Int for max score\\
+\hline
+\end{DoxyParams}
+Adds a new user to the user list 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of user list, pointer to char array for name, max\+Score \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_a6697f7f114c9bb66382b6f3023a1c2c6}\label{scoreboard_8h_a6697f7f114c9bb66382b6f3023a1c2c6}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!find\+User\+With\+Name@{find\+User\+With\+Name}}
+\index{find\+User\+With\+Name@{find\+User\+With\+Name}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{find\+User\+With\+Name()}{findUserWithName()}}
+{\footnotesize\ttfamily \hyperlink{struct_user}{User}$\ast$ find\+User\+With\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head,  }\item[{char $\ast$}]{name\+To\+Find }\end{DoxyParamCaption})}
+
+Function to find user in the list with the specified name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+{\em name\+To\+Find} & Pointer to specified name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the user with the specified name, if any
+\end{DoxyReturn}
+Finds and returns a pointer to the \hyperlink{struct_user}{User} in the linked list beginning with head which has the name name\+To\+Find. If such a \hyperlink{struct_user}{User} is not in the Linked List, it will return N\+U\+LL. Helper function to increment\+Score. 
+\begin{DoxyParams}{Parameters}
+{\em head} & of user list, address of character array to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{struct_user}{User} with name specified, or N\+U\+LL if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_ae127f31bf8ee7ceeeecbf1b48049926f}\label{scoreboard_8h_ae127f31bf8ee7ceeeecbf1b48049926f}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!free\+All@{free\+All}}
+\index{free\+All@{free\+All}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{free\+All()}{freeAll()}}
+{\footnotesize\ttfamily void free\+All (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head }\end{DoxyParamCaption})}
+
+Function to free all allocated memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list\\
+\hline
+\end{DoxyParams}
+frees every element of the linked list 
+\begin{DoxyParams}{Parameters}
+{\em head} & of user list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_abbf564a748a5c030ec38864c9ed9d256}\label{scoreboard_8h_abbf564a748a5c030ec38864c9ed9d256}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!get\+Index\+Of\+User\+With\+Name@{get\+Index\+Of\+User\+With\+Name}}
+\index{get\+Index\+Of\+User\+With\+Name@{get\+Index\+Of\+User\+With\+Name}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{get\+Index\+Of\+User\+With\+Name()}{getIndexOfUserWithName()}}
+{\footnotesize\ttfamily int get\+Index\+Of\+User\+With\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head,  }\item[{char $\ast$}]{name\+To\+Find }\end{DoxyParamCaption})}
+
+Function to get index of user with specified name
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+{\em name\+To\+Find} & Pointer to name to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int of index of user with specified name
+\end{DoxyReturn}
+Finds \hyperlink{struct_user}{User} with specified name and returns their index 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of user list, pointer to character array to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of user, or -\/1 if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_a6a857696a7b8cf46793c2c33b0d73c08}\label{scoreboard_8h_a6a857696a7b8cf46793c2c33b0d73c08}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!get\+Last\+Node@{get\+Last\+Node}}
+\index{get\+Last\+Node@{get\+Last\+Node}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{get\+Last\+Node()}{getLastNode()}}
+{\footnotesize\ttfamily \hyperlink{struct_user}{User}$\ast$ get\+Last\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head }\end{DoxyParamCaption})}
+
+Function to get last node of user list
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to last node in the list
+\end{DoxyReturn}
+Helper function. Finds the last node in the linked list and returns it. Returns N\+U\+LL if called with an empty head, although such a case is not used in the main function add\+Node. 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of user list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to last user in list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_ab76e857df873800ef2f76dc9400fc2c5}\label{scoreboard_8h_ab76e857df873800ef2f76dc9400fc2c5}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{get\+Length()}{getLength()}}
+{\footnotesize\ttfamily int get\+Length (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head }\end{DoxyParamCaption})}
+
+Function to get length of user list
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int of length of user list
+\end{DoxyReturn}
+Returns length of the list 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Int length of list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_abaa168c051d19c06b782b2e0b08f622b}\label{scoreboard_8h_abaa168c051d19c06b782b2e0b08f622b}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!get\+User\+At\+Index@{get\+User\+At\+Index}}
+\index{get\+User\+At\+Index@{get\+User\+At\+Index}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{get\+User\+At\+Index()}{getUserAtIndex()}}
+{\footnotesize\ttfamily \hyperlink{struct_user}{User}$\ast$ get\+User\+At\+Index (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+Function to find user at specified index in the list
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+{\em index} & Int to specify user searching for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+user pointer to user at specified index, if any
+\end{DoxyReturn}
+Gets user from specified index 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of user list, index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to user with index, or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_a7b945683c5d303395a8dd76df42eea23}\label{scoreboard_8h_a7b945683c5d303395a8dd76df42eea23}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!print\+Scoreboard@{print\+Scoreboard}}
+\index{print\+Scoreboard@{print\+Scoreboard}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{print\+Scoreboard()}{printScoreboard()}}
+{\footnotesize\ttfamily void print\+Scoreboard (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head }\end{DoxyParamCaption})}
+
+Function to print scoreboard
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list\\
+\hline
+\end{DoxyParams}
+Prints the scoreboard 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of user list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_ae85864d6a437484ce3490514b655da45}\label{scoreboard_8h_ae85864d6a437484ce3490514b655da45}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!update\+Node\+With\+Name@{update\+Node\+With\+Name}}
+\index{update\+Node\+With\+Name@{update\+Node\+With\+Name}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{update\+Node\+With\+Name()}{updateNodeWithName()}}
+{\footnotesize\ttfamily void update\+Node\+With\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head,  }\item[{char $\ast$}]{name,  }\item[{int}]{current\+Score }\end{DoxyParamCaption})}
+
+Function to update node with name
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+{\em name} & Pointer to name to update \\
+\hline
+{\em current\+Score} & Int of current score\\
+\hline
+\end{DoxyParams}
+Updates the score of the node with the name specified 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of user list, pointer to char of name, current\+Score \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scoreboard_8h_a99b08e2cabeba6521b87370c9d6b4b94}\label{scoreboard_8h_a99b08e2cabeba6521b87370c9d6b4b94}} 
+\index{scoreboard.\+h@{scoreboard.\+h}!user\+Is\+In\+List@{user\+Is\+In\+List}}
+\index{user\+Is\+In\+List@{user\+Is\+In\+List}!scoreboard.\+h@{scoreboard.\+h}}
+\subsubsection{\texorpdfstring{user\+Is\+In\+List()}{userIsInList()}}
+{\footnotesize\ttfamily int user\+Is\+In\+List (\begin{DoxyParamCaption}\item[{\hyperlink{struct_user}{User} $\ast$}]{head,  }\item[{char $\ast$}]{name\+To\+Find }\end{DoxyParamCaption})}
+
+Function to see if user is in list
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to first user in list \\
+\hline
+{\em name\+To\+Find} & Pointer to name searched for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int indicating if user is in list
+\end{DoxyReturn}
+Finds whether or not a an existing user is already in the list. Of they are, returns 1. If not, returns 0. 
+\begin{DoxyParams}{Parameters}
+{\em Head} & of user list, pointer to character array to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if user is in list, or 0 if not 
+\end{DoxyReturn}

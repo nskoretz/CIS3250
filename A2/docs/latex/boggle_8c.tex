@@ -1,0 +1,120 @@
+\hypertarget{boggle_8c}{}\section{src/boggle.c File Reference}
+\label{boggle_8c}\index{src/boggle.\+c@{src/boggle.\+c}}
+
+
+This program models the Boggle board game.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dictionary.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}board\+Generator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}word\+Checker.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scoreboard.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{boggle_8c_a842ed03f27719bc87666bfd1f75415b8}{M\+A\+X\+\_\+\+L\+I\+NE}~100
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{boggle_8c_af3345e99b4f68a527d92a50d32ddd519}{convert\+To\+Upper} (char $\ast$$\ast$upper)
+\item 
+char $\ast$ \hyperlink{boggle_8c_a9674e8d653bb90d1caf907b7a6e7cf07}{convert\+To\+Upper2} (char($\ast$upper)\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{boggle_8c_aaca0cb4c91f17f2ad34fb10125d32e1b}{free\+And\+Reset\+Board} (\hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board, \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$input\+Array\+Of\+Dice)
+\item 
+void \hyperlink{boggle_8c_aeaf3db38ea4aed1f285ab26767fee013}{increment\+Total\+Score} (int $\ast$user\+Score, char $\ast$word)
+\item 
+int \hyperlink{boggle_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This program models the Boggle board game. 
+
+\begin{DoxyDate}{Date}
+October 23rd 2017 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{boggle_8c_a842ed03f27719bc87666bfd1f75415b8}\label{boggle_8c_a842ed03f27719bc87666bfd1f75415b8}} 
+\index{boggle.\+c@{boggle.\+c}!M\+A\+X\+\_\+\+L\+I\+NE@{M\+A\+X\+\_\+\+L\+I\+NE}}
+\index{M\+A\+X\+\_\+\+L\+I\+NE@{M\+A\+X\+\_\+\+L\+I\+NE}!boggle.\+c@{boggle.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+L\+I\+NE}{MAX\_LINE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+L\+I\+NE~100}
+
+Changes made October 24th by Jackson Firth 0880887 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{boggle_8c_af3345e99b4f68a527d92a50d32ddd519}\label{boggle_8c_af3345e99b4f68a527d92a50d32ddd519}} 
+\index{boggle.\+c@{boggle.\+c}!convert\+To\+Upper@{convert\+To\+Upper}}
+\index{convert\+To\+Upper@{convert\+To\+Upper}!boggle.\+c@{boggle.\+c}}
+\subsubsection{\texorpdfstring{convert\+To\+Upper()}{convertToUpper()}}
+{\footnotesize\ttfamily char$\ast$ convert\+To\+Upper (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{upper }\end{DoxyParamCaption})}
+
+Converts every character in the character array to upper case
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper} & The address of a character array containing the string to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the converted character array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{boggle_8c_a9674e8d653bb90d1caf907b7a6e7cf07}\label{boggle_8c_a9674e8d653bb90d1caf907b7a6e7cf07}} 
+\index{boggle.\+c@{boggle.\+c}!convert\+To\+Upper2@{convert\+To\+Upper2}}
+\index{convert\+To\+Upper2@{convert\+To\+Upper2}!boggle.\+c@{boggle.\+c}}
+\subsubsection{\texorpdfstring{convert\+To\+Upper2()}{convertToUpper2()}}
+{\footnotesize\ttfamily char$\ast$ convert\+To\+Upper2 (\begin{DoxyParamCaption}\item[{char($\ast$)}]{upper\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Converts the characters in the character array into upper case
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper} & A pointer to the character array to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character array containing converte characters 
+\end{DoxyReturn}
+\mbox{\Hypertarget{boggle_8c_aaca0cb4c91f17f2ad34fb10125d32e1b}\label{boggle_8c_aaca0cb4c91f17f2ad34fb10125d32e1b}} 
+\index{boggle.\+c@{boggle.\+c}!free\+And\+Reset\+Board@{free\+And\+Reset\+Board}}
+\index{free\+And\+Reset\+Board@{free\+And\+Reset\+Board}!boggle.\+c@{boggle.\+c}}
+\subsubsection{\texorpdfstring{free\+And\+Reset\+Board()}{freeAndResetBoard()}}
+{\footnotesize\ttfamily void free\+And\+Reset\+Board (\begin{DoxyParamCaption}\item[{\hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board,  }\item[{\hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$}]{input\+Array\+Of\+Dice }\end{DoxyParamCaption})}
+
+Frees the memory allocated to the game board and resets it with new dice values
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Board} & The game board to be freed and resets \\
+\hline
+{\em input\+Array\+Of\+Dice} & The standard dice that keep their values between games \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{boggle_8c_aeaf3db38ea4aed1f285ab26767fee013}\label{boggle_8c_aeaf3db38ea4aed1f285ab26767fee013}} 
+\index{boggle.\+c@{boggle.\+c}!increment\+Total\+Score@{increment\+Total\+Score}}
+\index{increment\+Total\+Score@{increment\+Total\+Score}!boggle.\+c@{boggle.\+c}}
+\subsubsection{\texorpdfstring{increment\+Total\+Score()}{incrementTotalScore()}}
+{\footnotesize\ttfamily void increment\+Total\+Score (\begin{DoxyParamCaption}\item[{int $\ast$}]{user\+Score,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+Displays length of word passed to the screen, then calculates the score increment based on the word length.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Score} & Pointer to the user\textquotesingle{}s score \\
+\hline
+{\em word} & Pointer to the word the user made \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{boggle_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{boggle_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{boggle.\+c@{boggle.\+c}!main@{main}}
+\index{main@{main}!boggle.\+c@{boggle.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+

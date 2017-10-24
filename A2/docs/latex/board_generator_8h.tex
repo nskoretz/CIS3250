@@ -1,0 +1,161 @@
+\hypertarget{board_generator_8h}{}\section{include/board\+Generator.h File Reference}
+\label{board_generator_8h}\index{include/board\+Generator.\+h@{include/board\+Generator.\+h}}
+
+
+File takes care of how the Boggle board is shown.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_preset_dice}{Preset\+Dice}
+\item 
+struct \hyperlink{struct_rolled_dice}{Rolled\+Dice}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_preset_dice}{Preset\+Dice} \hyperlink{board_generator_8h_a3b8c51c1d9e98a1fc277de59564ec4ba}{Preset\+Dice}
+\item 
+typedef struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} \hyperlink{board_generator_8h_a388363e6585f1a7ea70fe63703e80c1a}{Rolled\+Dice}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{board_generator_8h_a4489e68bcd4dffa5b3c03f32b9925213}{initialize\+Preset\+Dice} (struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$input\+Array\+Of\+Dice)
+\item 
+void \hyperlink{board_generator_8h_a7a96a21eaecd07b6c549781815e0c866}{roll\+But\+Not\+Shuffle\+Dice} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$game\+Dice, struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$input\+Array\+Of\+Dice)
+\item 
+void \hyperlink{board_generator_8h_a4e83aa2661e486a2de066e84f9128d9f}{shuffle\+Rolled\+Dice\+Positions} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$game\+Dice)
+\item 
+void \hyperlink{board_generator_8h_aec91ec8ec550a6b30b19bb98dd213f6e}{print\+Game\+Board} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board)
+\item 
+void \hyperlink{board_generator_8h_aec4f1cef1c07a91751b9aa8bfd9ac716}{roll\+Dice} (struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$game\+Board, struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$input\+Array\+Of\+Dice)
+\item 
+void \hyperlink{board_generator_8h_a63f652ef56ef9c0b10f706c6cabb4c41}{convert\+To\+Board} (char $\ast$letters, char $\ast$$\ast$$\ast$board)
+\item 
+void \hyperlink{board_generator_8h_a82adcd9fc8d54124b089402d68cc60de}{print\+Hc\+Board} (char boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File takes care of how the Boggle board is shown. 
+
+\begin{DoxyDate}{Date}
+9 Sep 2012 update 12 Oct 2017 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{http://www.stack.nl/~dimitri/doxygen/docblocks.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/docblocks.\+html} 
+
+\href{http://www.stack.nl/~dimitri/doxygen/commands.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/commands.\+html}
+\end{DoxySeeAlso}
+Converts board from a string version to 2D array. Used in test mode
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 17 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+C\+I\+S$\ast$3250 Refactoring Lab Assignment 2 
+\end{DoxyVersion}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{board_generator_8h_a3b8c51c1d9e98a1fc277de59564ec4ba}\label{board_generator_8h_a3b8c51c1d9e98a1fc277de59564ec4ba}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!Preset\+Dice@{Preset\+Dice}}
+\index{Preset\+Dice@{Preset\+Dice}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{Preset\+Dice}{PresetDice}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_preset_dice}{Preset\+Dice}  \hyperlink{struct_preset_dice}{Preset\+Dice}}
+
+Changes Made by Michael Added in Doxygen style comments Changed all variable names to camel case and all struct data types to pascal case Changed pointers so that when declared the star is next to the variable Changed all of the tabs to spaces The pre-\/set dice which keep their values between games. \mbox{\Hypertarget{board_generator_8h_a388363e6585f1a7ea70fe63703e80c1a}\label{board_generator_8h_a388363e6585f1a7ea70fe63703e80c1a}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!Rolled\+Dice@{Rolled\+Dice}}
+\index{Rolled\+Dice@{Rolled\+Dice}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{Rolled\+Dice}{RolledDice}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_rolled_dice}{Rolled\+Dice}  \hyperlink{struct_rolled_dice}{Rolled\+Dice}}
+
+The rolled dice which do not keep their values between games. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{board_generator_8h_a63f652ef56ef9c0b10f706c6cabb4c41}\label{board_generator_8h_a63f652ef56ef9c0b10f706c6cabb4c41}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!convert\+To\+Board@{convert\+To\+Board}}
+\index{convert\+To\+Board@{convert\+To\+Board}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{convert\+To\+Board()}{convertToBoard()}}
+{\footnotesize\ttfamily void convert\+To\+Board (\begin{DoxyParamCaption}\item[{char $\ast$}]{letters,  }\item[{char $\ast$$\ast$$\ast$}]{board }\end{DoxyParamCaption})}
+
+Converts board from a string version to 2D array. Used in test mode. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_generator_8h_a4489e68bcd4dffa5b3c03f32b9925213}\label{board_generator_8h_a4489e68bcd4dffa5b3c03f32b9925213}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!initialize\+Preset\+Dice@{initialize\+Preset\+Dice}}
+\index{initialize\+Preset\+Dice@{initialize\+Preset\+Dice}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{initialize\+Preset\+Dice()}{initializePresetDice()}}
+{\footnotesize\ttfamily void initialize\+Preset\+Dice (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$}]{input\+Array\+Of\+Dice }\end{DoxyParamCaption})}
+
+Description\+: Initializes the dice in the list of pre-\/set dice. Call once at program start. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_generator_8h_aec91ec8ec550a6b30b19bb98dd213f6e}\label{board_generator_8h_aec91ec8ec550a6b30b19bb98dd213f6e}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!print\+Game\+Board@{print\+Game\+Board}}
+\index{print\+Game\+Board@{print\+Game\+Board}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{print\+Game\+Board()}{printGameBoard()}}
+{\footnotesize\ttfamily void print\+Game\+Board (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board }\end{DoxyParamCaption})}
+
+Prints a visualization of the input array of rolled\+\_\+dice. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_generator_8h_a82adcd9fc8d54124b089402d68cc60de}\label{board_generator_8h_a82adcd9fc8d54124b089402d68cc60de}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!print\+Hc\+Board@{print\+Hc\+Board}}
+\index{print\+Hc\+Board@{print\+Hc\+Board}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{print\+Hc\+Board()}{printHcBoard()}}
+{\footnotesize\ttfamily void print\+Hc\+Board (\begin{DoxyParamCaption}\item[{char}]{boggle\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+prints out the contents from the boggle 2D array 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_generator_8h_a7a96a21eaecd07b6c549781815e0c866}\label{board_generator_8h_a7a96a21eaecd07b6c549781815e0c866}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!roll\+But\+Not\+Shuffle\+Dice@{roll\+But\+Not\+Shuffle\+Dice}}
+\index{roll\+But\+Not\+Shuffle\+Dice@{roll\+But\+Not\+Shuffle\+Dice}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{roll\+But\+Not\+Shuffle\+Dice()}{rollButNotShuffleDice()}}
+{\footnotesize\ttfamily void roll\+But\+Not\+Shuffle\+Dice (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$}]{game\+Dice,  }\item[{struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$}]{input\+Array\+Of\+Dice }\end{DoxyParamCaption})}
+
+Description\+: Rolls the dice to be used at the start of each game. Puts the rolled dice in game\+\_\+dice. Does not shuffle the dice. Helper function. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_generator_8h_aec4f1cef1c07a91751b9aa8bfd9ac716}\label{board_generator_8h_aec4f1cef1c07a91751b9aa8bfd9ac716}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!roll\+Dice@{roll\+Dice}}
+\index{roll\+Dice@{roll\+Dice}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{roll\+Dice()}{rollDice()}}
+{\footnotesize\ttfamily void roll\+Dice (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$$\ast$}]{game\+Board,  }\item[{struct \hyperlink{struct_preset_dice}{Preset\+Dice} $\ast$}]{input\+Array\+Of\+Dice }\end{DoxyParamCaption})}
+
+Rolls the dice to be used at the start of the game and shuffles them, putting the dice into the 2D array game\+\_\+dice. Call once at the start of every game. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_generator_8h_a4e83aa2661e486a2de066e84f9128d9f}\label{board_generator_8h_a4e83aa2661e486a2de066e84f9128d9f}} 
+\index{board\+Generator.\+h@{board\+Generator.\+h}!shuffle\+Rolled\+Dice\+Positions@{shuffle\+Rolled\+Dice\+Positions}}
+\index{shuffle\+Rolled\+Dice\+Positions@{shuffle\+Rolled\+Dice\+Positions}!board\+Generator.\+h@{board\+Generator.\+h}}
+\subsubsection{\texorpdfstring{shuffle\+Rolled\+Dice\+Positions()}{shuffleRolledDicePositions()}}
+{\footnotesize\ttfamily void shuffle\+Rolled\+Dice\+Positions (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_rolled_dice}{Rolled\+Dice} $\ast$}]{game\+Dice }\end{DoxyParamCaption})}
+
+Shuffles an array of rolled dice. Helper function. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
