@@ -23,7 +23,7 @@
  * Changed all of the tabs to spaces
  */
 
-/** 
+/**
  * The pre-set dice which keep their values between games.
  */
 typedef struct PresetDice {
@@ -46,7 +46,7 @@ typedef struct RolledDice {
 void initializePresetDice(struct PresetDice *inputArrayOfDice);
 
 /**
- * Description: Rolls the dice to be used at the start of each game. 
+ * Description: Rolls the dice to be used at the start of each game.
  * Puts the rolled dice in game_dice. Does not shuffle the dice. Helper function.
  * @param: gameDice, pointer to the game dice
  */
@@ -66,7 +66,7 @@ void shuffleRolledDicePositions(struct RolledDice *gameDice);
 void printGameBoard(struct RolledDice **gameBoard);
 
 /**
- * Rolls the dice to be used at the start of the game and shuffles them, putting 
+ * Rolls the dice to be used at the start of the game and shuffles them, putting
  * the dice into the 2D array game_dice. Call once at the start of every game.
  * @param: gameBoard, pointer to an array of rolledDice
  */
