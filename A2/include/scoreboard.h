@@ -2,7 +2,7 @@
  * @file scoreboard.h
  * @date October 17 2017
  * @version CIS*3250 Refactoring Lab Assignment
- *
+ * @Mitchell + Team Members but mostly Jackson
  * @brief Holds function headers
  */
 
@@ -16,7 +16,7 @@ typedef struct User {
     int maxScore;
     int totalGames;
     int totalScore;
-    struct user *next;
+    struct User *next;
 } User;
 
 /**
